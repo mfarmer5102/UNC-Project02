@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# Config file to keep local machine settings/passwords distinct
+config/config.json
+
+#DS Store
+.DS_Store
