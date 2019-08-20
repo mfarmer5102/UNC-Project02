@@ -61,7 +61,7 @@ typings/
 .next
 
 # Config file to keep local machine settings/passwords distinct
-config.json
+config/config.json
 
 #DS Store
 .DS_Store
