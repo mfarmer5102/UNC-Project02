@@ -4,7 +4,7 @@ console.log(db);
 module.exports = function(app) {
   //Pull patient's existing personal information
   app.get("/editpatient/:patientid", function(req, res) {
-    db.Patient.findOne({
+    db.Patients.findOne({
       where: {
         patientId: req.params.patientid
       }
@@ -15,7 +15,7 @@ module.exports = function(app) {
 
   //Process changes to a patient's personal information
   app.put("/editpatient/:patientid", function(req, res) {
-    db.Patient.update({
+    db.Patients.update({
       where: {
         patientId: req.params.patientid
       }
@@ -26,7 +26,7 @@ module.exports = function(app) {
 
   //Delete a patient
   app.delete("/editpatient/:patientid", function(req, res) {
-    db.Patient.destroy({
+    db.Patients.destroy({
       where: {
         patientId: req.params.patientid
       }

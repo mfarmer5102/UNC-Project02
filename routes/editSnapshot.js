@@ -3,7 +3,7 @@ console.log(db);
 
 module.exports = function(app) {
   //Pull existing values for a snapshot (for editing purposes)
-  db.Snapshot.findOne({
+  db.Snapshots.findOne({
     where: {
       snapshotId: req.params.snapshotid
     }
@@ -13,7 +13,7 @@ module.exports = function(app) {
 
   //Process changes to a specific snapshot
   app.put("/editsnapshot/:snapshotid", function(req, res) {
-    db.Snapshot.update({
+    db.Snapshots.update({
       where: {
         snapshotId: req.params.snapshotid
       }
@@ -24,7 +24,7 @@ module.exports = function(app) {
 
   //Delete a snapshot
   app.delete("/editsnapshot/:snapshotid", function(req, res) {
-    db.Snapshot.destroy({
+    db.Snapshots.destroy({
       where: {
         snapshotId: req.params.snapshotid
       }
