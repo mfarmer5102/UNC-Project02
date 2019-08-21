@@ -1,9 +1,3 @@
-DROP DATABASE IF EXISTS MedicalApp_DB;
-
-CREATE DATABASE MedicalApp_DB;
-USE MedicalApp_DB;
-
-DROP TABLE IF EXISTS patients;
 
 CREATE TABLE patients
 (
