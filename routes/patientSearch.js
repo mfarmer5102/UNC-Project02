@@ -2,11 +2,6 @@ var db = require("../models");
 console.log(db);
 
 module.exports = function(app) {
-  //Set the default route
-  app.get("/", function(req, res) {
-    res.send("Hit home route.");
-  });
-
   //Find all patients
   app.get("/patientsearch/all", function(req, res) {
     db.Patient.findAll({}).then(function(result) {
