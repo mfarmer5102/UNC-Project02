@@ -1,22 +1,81 @@
 module.exports = function(sequelize, DataTypes) {
   var Post = sequelize.define("Post", {
-    title: {
+    patientId: {
+      type: DataTypes.INTEGER,
+      primarykey: true,
+      autoIncrement: true
+    },
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
+        is: ["^[a-z]+$", "i"]
       }
     },
-    body: {
-      type: DataTypes.TEXT,
+    lastName: {
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
+        is: ["^[a-z]+$", "i"]
       }
     },
-    category: {
+    birthDate: {
+      type: DataTypes.DATEONLY,
+      validate: {
+        isDate: true
+      }
+    },
+    gender: {
       type: DataTypes.STRING,
-      defaultValue: "Personal"
+      validate: {
+        is: ["^[a-z]+$", "i"]
+      }
+    },
+    ssn: {
+      type: DataTypes.STRING,
+      validate: {
+        isNumeric: true
+      }
+    },
+    photoURL: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isUrl: true
+      }
+    },
+    primaryPhysicianName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        is: ["^[a-z]+$", "i"]
+      }
+    },
+    phoneNumber: {
+      type: DataTypes.STRING,
+      validate: {
+        isNumeric: true
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isUrl: true
+      }
+    },
+    emergencyContactName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        is: ["^[a-z]+$", "i"]
+      }
+    },
+    emergencyContactNumber: {
+      type: DataTypes.STRING,
+      validate: {
+        isNumeric: true
+      }
     }
   });
   return Post;
