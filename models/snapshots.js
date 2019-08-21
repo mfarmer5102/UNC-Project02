@@ -4,19 +4,19 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       primarykey: true,
       autoIncrement: true,
-      notNull: true
+      allowNull: false
     },
     patientId: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       validate: {
-        isNumeric: true,
-        notNull: true
+        isNumeric: true
       }
     },
     physicianId: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       validate: {
-        notNull: true,
         isNumeric: true
       }
     },
@@ -33,18 +33,18 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     temperature: {
-      type: DataTypes.INTEGER,
-      validate: {
-        isNumeric: true
-      }
-    },
-    weight: {
       type: DataTypes.DECIMAL,
       validate: {
         isDecimal: true
       }
     },
-    height: {
+    weightValue: {
+      type: DataTypes.DECIMAL,
+      validate: {
+        isDecimal: true
+      }
+    },
+    heightValue: {
       type: DataTypes.DECIMAL,
       validate: {
         isDecimal: true
@@ -61,22 +61,23 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     systolicBloodPressure: {
-        type: DataTypes.INTEGER,
-        validate: {
-            isNumeric: true
-        }
+      type: DataTypes.INTEGER,
+      validate: {
+        isNumeric: true
+      }
     },
     diastolicBloodPressure: {
-        type: DataTypes.INTEGER,
-        validate: {
-        isNumeric: true       
+      type: DataTypes.INTEGER,
+      validate: {
+        isNumeric: true
+      }
     },
     comments: {
-        type: DataTypes.STRING,
-        validate: {
-          is: ["^[a-z]+$",'i']
-        } 
+      type: DataTypes.STRING,
+      validate: {
+        is: ["^[a-z]+$", "i"]
+      }
     }
   });
-  return Snapsots;
+  return Snapshots;
 };
