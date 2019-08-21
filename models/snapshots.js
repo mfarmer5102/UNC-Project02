@@ -51,13 +51,10 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     isDiabetic: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: true,
+      type: DataTypes.STRING,
       allowNull: false,
-      set: function(value) {
-        if (value === "true") value = true;
-        if (value === "false") value = false;
-        this.setDataValue("hidden", value);
+      validate: {
+        is: ["^[a-z]+$", "i"]
       }
     },
     systolicBloodPressure: {
