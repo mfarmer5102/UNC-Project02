@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Post = sequelize.define("Post", {
+  var Patients = sequelize.define("patients", {
     patientId: {
       type: DataTypes.INTEGER,
       primarykey: true,
@@ -78,5 +78,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  return Post;
+  return Patients;
 };
