@@ -4,7 +4,7 @@ console.log(db);
 module.exports = function(app) {
   //Find one patient by their patientId
   app.get("/patientinformation/:patientid", function(req, res) {
-    db.Patient.findOne({
+    db.Patients.findOne({
       where: {
         patientId: req.params.patientid
       }
