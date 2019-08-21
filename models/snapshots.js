@@ -58,10 +58,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     systolicBloodPressure: {
-      type: DataTypes.INTEGER,
-      validate: {
-        isNumeric: true
-      }
+      type: DataTypes.INTEGER
     },
     diastolicBloodPressure: {
       type: DataTypes.INTEGER,
