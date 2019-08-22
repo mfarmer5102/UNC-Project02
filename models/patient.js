@@ -41,36 +41,24 @@ module.exports = function(sequelize, DataTypes) {
     },
     primaryPhysicianName: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        is: ["^[a-z]+$", "i"]
-      }
+      allowNull: false
     },
     phoneNumber: {
-      type: DataTypes.STRING,
-      validate: {
-        isNumeric: true
-      }
+      type: DataTypes.STRING
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         isUrl: true
       }
     },
     emergencyContactName: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        is: ["^[a-z]+$", "i"]
-      }
+      allowNull: false
     },
     emergencyContactNumber: {
-      type: DataTypes.STRING,
-      validate: {
-        isNumeric: true
-      }
+      type: DataTypes.STRING
     }
   });
   return Patients;

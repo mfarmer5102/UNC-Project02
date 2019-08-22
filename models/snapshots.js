@@ -27,29 +27,26 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     temperature: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.FLOAT,
       validate: {
-        isDecimal: true
+        isFloat: true
       }
     },
     weightValue: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.FLOAT,
       validate: {
-        isDecimal: true
+        isFloat: true
       }
     },
     heightValue: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.FLOAT,
       validate: {
-        isDecimal: true
+        isFloat: true
       }
     },
     isDiabetic: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isNumeric: true
-      }
+      allowNull: false
     },
     systolicBloodPressure: {
       type: DataTypes.INTEGER
