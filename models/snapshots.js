@@ -1,11 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Snapshots = sequelize.define("snapshots", {
-    snapshotId: {
-      type: DataTypes.INTEGER,
-      primarykey: true,
-      autoIncrement: true,
-      allowNull: false
-    },
+  var Snapshots = sequelize.define("Snapshots", {
     patientId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -54,14 +48,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        is: ["^[a-z]+$", "i"]
+        isNumeric: true
       }
     },
     systolicBloodPressure: {
-      type: DataTypes.INTEGER,
-      validate: {
-        isNumeric: true
-      }
+      type: DataTypes.INTEGER
     },
     diastolicBloodPressure: {
       type: DataTypes.INTEGER,
@@ -72,7 +63,7 @@ module.exports = function(sequelize, DataTypes) {
     comments: {
       type: DataTypes.STRING,
       validate: {
-        is: ["^[a-z]+$", "i"]
+        isNumeric: true
       }
     }
   });
