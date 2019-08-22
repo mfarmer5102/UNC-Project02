@@ -17,5 +17,8 @@ $.ajax({
     var card = $("<div class='card'></div>");
     card.append(header);
     card.append(body);
+
+    //Append the card to DOM
+    $("#cardContainer").append(card);
   }
 });
