@@ -18,7 +18,7 @@ $.ajax({
     card.append(header);
     card.append(body);
 
-    //Append the card to DOM
+    //Append the card to DOM for user to see
     $("#cardContainer").append(card);
   }
 });
