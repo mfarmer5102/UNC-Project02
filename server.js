@@ -10,7 +10,7 @@ var PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 // Handlebars
 app.engine(
@@ -22,7 +22,7 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/users")(app);
+require("./routes/servePage")(app);
 require("./routes/patientSearch")(app);
 require("./routes/patientInformation")(app);
 require("./routes/patientSnapshots")(app);
