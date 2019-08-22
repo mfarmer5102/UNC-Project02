@@ -10,7 +10,7 @@ var PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 // Handlebars
 app.engine(
@@ -22,8 +22,14 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/servePage")(app);
+require("./routes/patientSearch")(app);
+require("./routes/patientInformation")(app);
+require("./routes/patientSnapshots")(app);
+require("./routes/addPatient")(app);
+require("./routes/addSnapshot")(app);
+require("./routes/editPatient")(app);
+require("./routes/editSnapshot")(app);
 
 var syncOptions = { force: false };
 
