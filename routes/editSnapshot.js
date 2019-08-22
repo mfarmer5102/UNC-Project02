@@ -3,12 +3,14 @@ console.log(db);
 
 module.exports = function(app) {
   //Pull existing values for a snapshot (for editing purposes)
-  db.Snapshots.findOne({
-    where: {
-      snapshotId: req.params.snapshotid
-    }
-  }).then(function(result) {
-    res.json(result);
+  app.get("/editsnapshot/:snapshotid", function(req, res) {
+    db.Snapshots.findOne({
+      where: {
+        snapshotId: req.params.snapshotid
+      }
+    }).then(function(result) {
+      res.json(result);
+    });
   });
 
   //Process changes to a specific snapshot
