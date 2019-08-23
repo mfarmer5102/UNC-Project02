@@ -1,5 +1,23 @@
-<h2>
+<h4>
     View patient snapshots.
-</h2>
+</h4>
 
-<script src="/js/patientSearch.js"></script>
+{{#each snapshot}}
+
+<div class='card animated fadeInUpBig'>
+    <div class='card-header'><strong>{{this.snapshotDate}}</strong></div>
+    <div class='card-body'>
+        Performing Physician: {{this.physicianName}} <br/>
+        Pulse: {{this.pulse}} <br/>
+        Weight: {{this.weightValue}} lbs <br/>
+        Height: {{this.heightValue}}" <br/>
+        Body Temperature: {{this.temperature}} <br/>
+        Diabetic Status: {{this.isDiabetic}} <br/>
+        Blood Pressure: {{this.systolicBloodPressure}} / {{this.diastolicBloodPressure}} <br/>
+        Comments: {{this.comments}} <br/>
+    </div>
+</div>
+
+{{/each}}
+
+<script src="/js/patientSnapshots.js"></script>

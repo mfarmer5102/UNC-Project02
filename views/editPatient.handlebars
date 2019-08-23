@@ -1,31 +1,58 @@
-<h2>Add a Patient</h2>
-<form class="create-form">
-    <div class="form-group">
-        <label for="first">First Name: </label>
-        <input type="text" id="first" name="firstName">
-    </div>
-    <div class="form-group">
-        <label for="last">Last Name: </label>
-        <input type="text" id="last" name="lastName">
-    </div>
-    <div class="form-group">
-        <label for="ssn">Social Security Number: </label>
-        <input type="text" id="ssn" name="socialSecurity">
-    </div>
-    <div class="form-group">
-        <label for="desc">Patient Description: </label>
-        <textarea id="desc" name="description" rows="8" cols="40"></textarea>
-    </div>
-    <div class="form-group">
-        <label for="phone">Contact Info: </label>
-        <input type="text" id="phone" name="phone number">
-    </div>
-    <form action="/" method="POST">
-        <textarea type="text" name="addPatient"></textarea>
-        <button type="submit">Add Patient</button>
-    </form>
+<h4 class="pageHeader">Edit a Patient</h4>
 
+{{#each patient}}
+<form method="POST" action='/api/editpatient'>
+    <div class="form-group" style="display: none">
+        <label for="patientId">ID</label>
+        <input type="text" class="form-control" name="patientId" value={{this.id}}>
+    </div>
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" name="firstName" value={{this.firstName}}>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" name="lastName" value={{this.lastName}}>
+    </div>
+    <div class="form-group">
+        <label for="birthDate">Birthday</label>
+        <input type="date" class="form-control" name="birthDate" value={{this.birthDate}}>
+    </div>
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <input type="text" class="form-control" name="gender" value={{this.gender}}>
+    </div>
+    <div class="form-group">
+        <label for="ssn">SSN</label>
+        <input type="text" class="form-control" name="ssn" value={{this.ssn}}>
+    </div>
+    <div class="form-group">
+        <label for="photoURL">Photo URL</label>
+        <input type="text" class="form-control" name="photoURL" value={{this.photoURL}}>
+    </div>
+    <div class="form-group">
+        <label for="primaryPhysicianName">Primary Physician</label>
+        <input type="text" class="form-control" name="primaryPhysicianName" value={{this.primaryPhysicianName}}>
+    </div>
+    <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" class="form-control" name="phoneNumber" value={{this.phoneNumber}}>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" value={{this.email}}>
+    </div>
+    <div class="form-group">
+        <label for="emergencyContactName">Emergency Contact Name</label>
+        <input type="text" class="form-control" name="emergencyContactName" value={{this.emergencyContactName}}>
+    </div>
+    <div class="form-group">
+        <label for="emergencyContactPhone">Emergency Contact Phone</label>
+        <input type="text" class="form-control" name="emergencyContactNumber" value={{this.emergencyContactNumber}}>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{{/each}}
 
-    <button type="submit">Delete Patient</button>
-
-    <button type="submit">Edit Changes</button>
+{{!-- Scripts --}}
+<script src="/js/editPatient.js"></script>

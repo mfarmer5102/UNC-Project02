@@ -4,8 +4,8 @@ console.log(db);
 module.exports = function(app) {
   //Add a new patient
   app.post("/api/addpatient", function(req, res) {
-    db.Patients.create(req.body).then(function(result) {
-      res.json(result);
+    db.Patients.create(req.body).then(function() {
+      res.redirect("/page_patientsearch");
     });
   });
 };

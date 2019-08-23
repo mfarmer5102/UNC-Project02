@@ -32,8 +32,18 @@ module.exports = function(app) {
   });
 
   //Send the Patient Snapshots page
-  app.get("/page_patientsnapshots", function(req, res) {
-    res.render("patientSnapshots");
+  app.get("/page_patientsnapshots/:patientid", function(req, res) {
+    db.Snapshots.findAll({
+      where: {
+        patientId: req.params.patientid
+      }
+    }).then(function(result) {
+      if (result !== null) {
+        res.render("patientSnapshots", { snapshot: result });
+      } else {
+        res.sendStatus(418);
+      }
+    });
   });
 
   //Send the Add Patient page
@@ -42,8 +52,22 @@ module.exports = function(app) {
   });
 
   //Send the Edit Patient page
-  app.get("/page_editpatient", function(req, res) {
-    res.render("editPatient");
+  app.get("/page_editpatient/:patientid", function(req, res) {
+    db.Patients.findOne({
+      where: {
+        id: req.params.patientid
+      }
+    }).then(function(result) {
+      if (result !== null) {
+        console.log(result);
+        console.log(result.dataValues);
+        var resArr = [];
+        resArr.push(result.dataValues);
+        res.render("editPatient", { patient: resArr });
+      } else {
+        res.sendStatus(418);
+      }
+    });
   });
 
   //Send the Add Snapshot page

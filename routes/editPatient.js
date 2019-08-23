@@ -2,25 +2,30 @@ var db = require("../models");
 console.log(db);
 
 module.exports = function(app) {
-  //Pull patient's existing personal information
-  app.get("/api/editpatient/:patientid", function(req, res) {
-    db.Patients.findOne({
+  app.post("/api/editpatient", function(req, res) {
+    console.log("Receiving a put request");
+    db.Patients.update(req.body, {
       where: {
-        patientId: req.params.patientid
+        id: req.body.patientId
       }
-    }).then(function(result) {
-      res.json(result);
+    }).then(function() {
+      res.redirect("/page_patientsearch");
     });
   });
 
+  /////////********************* */
+  /////////********************* */
+  /////////********************* */
+
   //Process changes to a patient's personal information
-  app.put("/api/editpatient/:patientid", function(req, res) {
-    db.Patients.update({
+  app.put("/api/editpatient", function(req, res) {
+    console.log("Receiving a put request");
+    db.Patients.update(req.body, {
       where: {
-        patientId: req.params.patientid
+        id: req.body.patientId
       }
-    }).then(function(result) {
-      res.json(result);
+    }).then(function() {
+      res.redirect("/page_patientsearch");
     });
   });
 

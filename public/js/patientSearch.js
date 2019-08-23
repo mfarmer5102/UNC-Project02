@@ -61,6 +61,7 @@ $(document).on("submit", "#patientSearchForm", function() {
   });
 });
 
+//Handle click on card
 $(document).on("click", ".patient-card", function() {
   var patientId = $(this).attr("data-patientId");
   window.location.replace("/page_patientinformation/" + patientId);

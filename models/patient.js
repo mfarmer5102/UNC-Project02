@@ -34,10 +34,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     photoURL: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isUrl: true
-      }
+      allowNull: true
     },
     primaryPhysicianName: {
       type: DataTypes.STRING,

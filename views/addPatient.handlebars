@@ -1,30 +1,49 @@
 <h4 class="pageHeader">Add a Patient</h4>
 
-<form class="create-form">
-
+<form method="POST" action='/api/addpatient'>
     <div class="form-group">
-        <label for="first">First Name: </label>
-        <input type="text" id="first" name="firstName">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" name="firstName">
     </div>
     <div class="form-group">
-        <label for="last">Last Name: </label>
-        <input type="text" id="last" name="lastName">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" name="lastName">
     </div>
     <div class="form-group">
-        <label for="ssn">Social Security Number: </label>
-        <input type="text" id="ssn" name="socialSecurity">
+        <label for="birthDate">Birthday</label>
+        <input type="date" class="form-control" name="birthDate">
     </div>
     <div class="form-group">
-        <label for="phone">Contact Info: </label>
-        <input type="text" id="phone" name="phoneNumber">
+        <label for="gender">Gender</label>
+        <input type="text" class="form-control" name="gender">
     </div>
     <div class="form-group">
-        <label for="desc">Patient Description: </label>
-        <textarea id="desc" name="description" rows="8" cols="40"></textarea>
+        <label for="ssn">SSN</label>
+        <input type="text" class="form-control" name="ssn">
     </div>
-
-    <form action="/" method="POST">
-        <textarea type="text" name="addPatient"></textarea>
-
-        <button type="submit">Add Patient</button>
-    </form>
+    <div class="form-group">
+        <label for="photoURL">Photo URL</label>
+        <input type="text" class="form-control" name="photoURL">
+    </div>
+    <div class="form-group">
+        <label for="primaryPhysicianName">Primary Physician</label>
+        <input type="text" class="form-control" name="primaryPhysicianName">
+    </div>
+    <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" class="form-control" name="phoneNumber">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email">
+    </div>
+    <div class="form-group">
+        <label for="emergencyContactName">Emergency Contact Name</label>
+        <input type="text" class="form-control" name="emergencyContactName">
+    </div>
+    <div class="form-group">
+        <label for="emergencyContactPhone">Emergency Contact Phone</label>
+        <input type="text" class="form-control" name="emergencyContactPhone">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
