@@ -1,4 +1,3 @@
-<ul>
     {{#each patient}}
     <li>
         <p><span class="label">Patient Social Security Number: </span> {{this.ssn}}</p>
@@ -11,32 +10,3 @@
         <a href="/{{this.id}}">Update this Patients info</a>
     </li>
     {{/each}}
-</ul>
-
-<h2>Edit Patient</h2>
-<div class="form-group">
-    <label for="first">First Name: </label>
-    <input type="text" id="first" name="firstName">
-</div>
-<div class="form-group">
-    <label for="last">Last Name: </label>
-    <input type="text" id="last" name="lastName">
-</div>
-<div class="form-group">
-    <label for="ssn">Social Security Number: </label>
-    <input type="text" id="ssn" name="socialSecurity">
-</div>
-<div class="form-group">
-    <label for="phone">Contact Info: </label>
-    <input type="text" id="phone" name="phoneNumber">
-</div>
-<div class="form-group">
-    <label for="desc">Patient Description: </label>
-    <textarea id="desc" name="description" rows="8" cols="40"></textarea>
-</div>
-
-<form action="/" method="POST">
-    <textarea type="text" name="editPatient"></textarea>
-
-    <button type="submit">Edit Patient</button>
-</form>

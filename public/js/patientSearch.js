@@ -15,6 +15,7 @@ function drawCards(response) {
   card.css("color", "black");
   card.css("text-decoration", "none");
   card.addClass("patient-card card animated fadeInUpBig");
+  card.attr("data-patientId", response[i].id);
 
   card.append(header);
   card.append(body);
@@ -59,4 +60,9 @@ $(document).on("submit", "#patientSearchForm", function() {
       drawCards(responseArr);
     }
   });
+});
+
+$(document).on("click", ".patient-card", function() {
+  var patientId = $(this).attr("data-patientId");
+  alert(patientId);
 });
