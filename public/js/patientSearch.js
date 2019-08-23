@@ -65,4 +65,5 @@ $(document).on("submit", "#patientSearchForm", function() {
 $(document).on("click", ".patient-card", function() {
   var patientId = $(this).attr("data-patientId");
   window.location.replace("/page_patientinformation/" + patientId);
+  localStorage.setItem("activePatientId", patientId);
 });
