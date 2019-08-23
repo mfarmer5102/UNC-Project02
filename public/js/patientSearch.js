@@ -15,7 +15,7 @@ $.ajax({
     body.append("SSN: " + response[i].ssn);
 
     //Define and fill card
-    var card = $("<div class='card'></div>");
+    var card = $("<div class='card animated fadeInUpBig'></div>");
     card.append(header);
     card.append(body);
 
