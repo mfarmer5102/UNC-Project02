@@ -13,8 +13,22 @@ module.exports = function(app) {
   });
 
   //Send the Patient Information page
-  app.get("/page_patientinformation", function(req, res) {
-    res.render("patientInformation");
+  app.get("/page_patientinformation/:patientid", function(req, res) {
+    db.Patients.findOne({
+      where: {
+        id: req.params.patientid
+      }
+    }).then(function(result) {
+      if (result !== null) {
+        console.log(result);
+        console.log(result.dataValues);
+        var resArr = [];
+        resArr.push(result.dataValues);
+        res.render("patientInformation", { patient: resArr });
+      } else {
+        res.sendStatus(418);
+      }
+    });
   });
 
   //Send the Patient Snapshots page

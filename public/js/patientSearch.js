@@ -11,7 +11,6 @@ function drawCards(response) {
 
   //Define and fill card
   var card = $("<a></a>");
-  card.attr("href", "/page_patientinformation");
   card.css("color", "black");
   card.css("text-decoration", "none");
   card.addClass("patient-card card animated fadeInUpBig");
@@ -64,5 +63,5 @@ $(document).on("submit", "#patientSearchForm", function() {
 
 $(document).on("click", ".patient-card", function() {
   var patientId = $(this).attr("data-patientId");
-  alert(patientId);
+  window.location.replace("/page_patientinformation/" + patientId);
 });
