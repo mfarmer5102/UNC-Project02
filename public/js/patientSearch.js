@@ -10,15 +10,17 @@ $.ajax({
 
     //Define and fillcard body
     var body = $("<div class='card-body'></div>");
-    body.append(response[i].ssn);
-    body.append(response[i].birthDate);
+    body.append("Birthdate: " + response[i].birthDate);
+    body.append("<br>");
+    body.append("SSN: " + response[i].ssn);
 
     //Define and fill card
-    var card = $("<div class='card'></div>");
+    var card = $("<div class='card animated fadeInUpBig'></div>");
     card.append(header);
     card.append(body);
 
-    //Append the card to DOM for user to see
+    //Append the card to DOM and make a space
     $("#cardContainer").append(card);
+    $("#cardContainer").append("<br>");
   }
 });
