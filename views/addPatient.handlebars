@@ -1,49 +1,54 @@
-<h4 class="pageHeader">Add a Patient</h4>
-
 <form method="POST" action='/api/addpatient'>
-    <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" class="form-control" name="firstName">
+    <div class='row'>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="birthDate">Birthday</label>
+            <input type="date" class="form-control" name="birthDate">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="gender">Gender</label>
+            <input type="text" class="form-control" name="gender">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="ssn">SSN</label>
+            <input type="text" class="form-control" name="ssn">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="photoURL">Photo URL</label>
+            <input type="text" class="form-control" name="photoURL">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="primaryPhysicianName">Primary Physician</label>
+            <input type="text" class="form-control" name="primaryPhysicianName">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" name="phoneNumber">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="emergencyContactName">Emergency Contact Name</label>
+            <input type="text" class="form-control" name="emergencyContactName">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="emergencyContactPhone">Emergency Contact Phone</label>
+            <input type="text" class="form-control" name="emergencyContactPhone">
+        </div>
     </div>
-    <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" name="lastName">
+    <div class='row'>
+        <div class="form-group col-sm-6 col-xs-12">
+            <button type="submit" class="btn btn-primary" style="width: 100%">Submit</button>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="birthDate">Birthday</label>
-        <input type="date" class="form-control" name="birthDate">
-    </div>
-    <div class="form-group">
-        <label for="gender">Gender</label>
-        <input type="text" class="form-control" name="gender">
-    </div>
-    <div class="form-group">
-        <label for="ssn">SSN</label>
-        <input type="text" class="form-control" name="ssn">
-    </div>
-    <div class="form-group">
-        <label for="photoURL">Photo URL</label>
-        <input type="text" class="form-control" name="photoURL">
-    </div>
-    <div class="form-group">
-        <label for="primaryPhysicianName">Primary Physician</label>
-        <input type="text" class="form-control" name="primaryPhysicianName">
-    </div>
-    <div class="form-group">
-        <label for="phoneNumber">Phone Number</label>
-        <input type="text" class="form-control" name="phoneNumber">
-    </div>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" name="email">
-    </div>
-    <div class="form-group">
-        <label for="emergencyContactName">Emergency Contact Name</label>
-        <input type="text" class="form-control" name="emergencyContactName">
-    </div>
-    <div class="form-group">
-        <label for="emergencyContactPhone">Emergency Contact Phone</label>
-        <input type="text" class="form-control" name="emergencyContactPhone">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
 </form>

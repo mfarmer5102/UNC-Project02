@@ -1,6 +1,6 @@
 function drawCards(response) {
   //Define define and fill card header
-  var header = $("<div class='card-header'></div>");
+  var header = $("<div class='card-header' style='font-weight: bold'></div>");
   header.append(response[i].lastName + ", " + response[i].firstName);
 
   //Define and fillcard body
