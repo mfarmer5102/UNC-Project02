@@ -33,7 +33,7 @@ module.exports = function(app) {
   app.delete("/api/editpatient/:patientid", function(req, res) {
     db.Patients.destroy({
       where: {
-        patientId: req.params.patientid
+        id: req.params.patientid
       }
     }).then(function(result) {
       res.json(result);

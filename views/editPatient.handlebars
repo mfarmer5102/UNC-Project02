@@ -50,7 +50,14 @@
         <label for="emergencyContactPhone">Emergency Contact Phone</label>
         <input type="text" class="form-control" name="emergencyContactNumber" value={{this.emergencyContactNumber}}>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class='row'>
+        <div class='col'>
+            <div id='deletePatientButton' data-patientIdToDelete={{this.id}}  class="btn btn-danger" style="width: 100%">Delete Patient</div>
+        </div>
+        <div class='col'>
+            <button type="submit" class="btn btn-primary" style="width: 100%">Save Changes</button>
+        </div>
+    </div>
 </form>
 {{/each}}
 

@@ -1,5 +1,4 @@
 var db = require("../models");
-console.log(db);
 
 module.exports = function(app) {
   //Find all patients

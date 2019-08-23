@@ -51,7 +51,17 @@
         <label for="comments">Comments</label>
         <textarea type="text" class="form-control" name="comments"></textarea value="{{this.comments}}">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class='row'>
+        <div class='col'>
+            <div id='deleteSnapshotButton' data-snapshotIdToDelete={{this.id}} class="btn btn-danger" style="width: 100%">Delete Snapshot</div>
+        </div>
+        <div class='col'>
+            <button type="submit" class="btn btn-primary" style="width: 100%">Save Changes</button>
+        </div>
+    </div>
 </form>
 
 {{/each}}
+
+{{!-- Scripts --}}
+<script src="/js/editSnapshot.js"></script>
