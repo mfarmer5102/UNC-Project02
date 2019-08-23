@@ -3,19 +3,28 @@ function renderProfileNavbar(patientId, receivingDiv) {
   var patientInfoLink = $(
     "<i id='patientInformationLink' style='color: blue' class='fas fa-user-alt fa-3x'></i>"
   );
-  patientInfoLink.attr("data-patientId", patientId);
+  patientInfoLink.attr(
+    "data-patientId",
+    localStorage.getItem("activePatientId")
+  );
 
   //Construct patient snapshot link
   var patientSnapshotLink = $(
     "<i id='patientSnapshotLink' style='color: green' class='fas fa-clipboard-list fa-3x'></i>"
   );
-  patientSnapshotLink.attr("data-patientId", patientId);
+  patientSnapshotLink.attr(
+    "data-patientId",
+    localStorage.getItem("activePatientId")
+  );
 
   //Construct patient vitals link
   var patientVitalsLink = $(
     "<i id='patientVitalsLink' style='color: red' class='fas fa-heartbeat fa-3x'></i>"
   );
-  patientVitalsLink.attr("data-patientId", patientId);
+  patientVitalsLink.attr(
+    "data-patientId",
+    localStorage.getItem("activePatientId")
+  );
 
   //Define alert wrapper
   var alertWrapper = $(
