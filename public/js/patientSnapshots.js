@@ -5,4 +5,5 @@ function patientSnaps(patientid) {
   }).then(function(response) {
     console.log(response);
   });
+  return patientSnaps;
 }

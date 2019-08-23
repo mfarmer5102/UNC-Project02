@@ -6,4 +6,5 @@ function patientInfo(patientid) {
   }).then(function(response) {
     console.log(response);
   });
+  return patientInfo;
 }
