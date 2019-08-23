@@ -1,40 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<h4 class="pageHeader">Add a Snapshot</h4>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add a Snapshot</title>
-</head>
-
-<body>
-
-    <h2>Add a Patient</h2>
-    <form class="create-form">
-        <div class="form-group">
-            <label for="first">First Name: </label>
-            <input type="text" id="first" name="firstName">
-        </div>
-        <div class="form-group">
-            <label for="last">Last Name: </label>
-            <input type="text" id="last" name="lastName">
-        </div>
-        <div class="form-group">
-            <label for="ssn">Social Security Number: </label>
-            <input type="text" id="ssn" name="socialSecurity">
-        </div>
-        <div class="form-group">
-            <label for="desc">Patient Description: </label>
-            <textarea id="desc" name="Patient description">
-        </div>
-        <form action="/" method="POST">
-            <textarea type="text" name="addPatient"></textarea>
-            <button type="submit">Add Patient</button>
-    </form>
-
-</body>
-
-<button type="submit">Confirm</button>
-
-</html>
+<form method="POST" action='/api/addsnapshot'>
+    <div class="form-group">
+        <label for="patientId">Patient ID</label>
+        <input readonly type="text" class="form-control" name="patientId" value="{{this.patientId}}">
+    </div>
+    <div class="form-group">
+        <label for="snapshotDate">Date</label>
+        <input type="text" class="form-control" name="snapshotDate">
+    </div>
+    <div class="form-group">
+        <label for="physicianName">Performing Physician</label>
+        <input type="text" class="form-control" name="physicianName">
+    </div>
+    <div class="form-group">
+        <label for="pulse">Pulse</label>
+        <input type="text" class="form-control" name="pulse">
+    </div>
+    <div class="form-group">
+        <label for="temperature">Temperature</label>
+        <input type="text" class="form-control" name="temperature">
+    </div>
+    <div class="form-group">
+        <label for="weightValue">Weight (Pounds)</label>
+        <input type="text" class="form-control" name="weightValue">
+    </div>
+    <div class="form-group">
+        <label for="heightValue">Height (Inches)</label>
+        <input type="text" class="form-control" name="heightValue">
+    </div>
+    <div class="form-group">
+        <label for="isDiabetic">Diabetic Status</label>
+        <input type="text" class="form-control" name="isDiabetic">
+    </div>
+    <div class="form-group">
+        <label for="systolicBloodPressure">Systolic Blood Pressure</label>
+        <input type="number" class="form-control" name="systolicBloodPressure">
+    </div>
+    <div class="form-group">
+        <label for="diastolicBloodPressure">Diastolic Blood Pressure</label>
+        <input type="number" class="form-control" name="diastolicBloodPressure">
+    </div>
+    <div class="form-group">
+        <label for="comments">Comments</label>
+        <textarea type="text" class="form-control" name="comments"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

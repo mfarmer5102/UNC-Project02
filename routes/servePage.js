@@ -71,8 +71,9 @@ module.exports = function(app) {
   });
 
   //Send the Add Snapshot page
-  app.get("/page_addsnapshot", function(req, res) {
-    res.render("addSnapshot");
+  app.get("/page_addsnapshot/:patientid", function(req, res) {
+    var patientIdCapture = req.params.patientid;
+    res.render("addSnapshot", { patientId: patientIdCapture });
   });
 
   //Send the Edit Snapshot page

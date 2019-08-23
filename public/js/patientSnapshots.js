@@ -1,9 +1,9 @@
-function patientSnaps(patientid) {
-  $.ajax({
-    url: "/api/snapshots/all/" + patientid,
-    method: "GET"
-  }).then(function(response) {
-    console.log(response);
-  });
-}
-patientSnaps(1);
+$(document).on("click", "#patientInformationLink", function() {
+  var patientId = $(this).attr("data-patientId");
+  window.location.replace("/page_patientinformation/" + patientId);
+});
+
+$(document).on("click", "#patientSnapshotLink", function() {
+  var patientId = $(this).attr("data-patientId");
+  window.location.replace("/page_patientsnapshots/" + patientId);
+});
