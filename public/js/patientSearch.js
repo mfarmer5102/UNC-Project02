@@ -1,5 +1,5 @@
 $.ajax({
-  url: "https://patientplus.herokuapp.com/api/patientsearch/all",
+  url: "/api/patientsearch/all",
   method: "GET"
 }).then(function(response) {
   console.log(response);

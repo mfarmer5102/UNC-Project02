@@ -1,7 +1,6 @@
 function patientInfo(patientid) {
   $.ajax({
-    url:
-      "https://patientplus.herokuapp.com/api/patientinformation/" + patientid,
+    url: "/api/patientinformation/" + patientid,
     method: "GET"
   }).then(function(response) {
     console.log(response);
