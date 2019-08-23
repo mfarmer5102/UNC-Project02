@@ -77,7 +77,17 @@ module.exports = function(app) {
   });
 
   //Send the Edit Snapshot page
-  app.get("/page/editsnapshot", function(req, res) {
-    res.render("editSnapshot");
+  app.get("/page_editsnapshot/:snapshotid", function(req, res) {
+    db.Snapshots.findAll({
+      where: {
+        id: req.params.snapshotid
+      }
+    }).then(function(result) {
+      if (result !== null) {
+        res.render("editSnapshot", { snapshot: result });
+      } else {
+        res.sendStatus(418);
+      }
+    });
   });
 };

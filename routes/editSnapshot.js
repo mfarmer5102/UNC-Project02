@@ -14,13 +14,29 @@ module.exports = function(app) {
   });
 
   //Process changes to a specific snapshot
-  app.put("/api/editsnapshot/:snapshotid", function(req, res) {
-    db.Snapshots.update({
+  // app.put("/api/editsnapshot/:snapshotid", function(req, res) {
+  //   db.Snapshots.update({
+  //     where: {
+  //       snapshotId: req.params.snapshotid
+  //     }
+  //   }).then(function(result) {
+  //     res.json(result);
+  //   });
+  // });
+
+  //******************* */
+  //******************* */
+  //******************* */
+
+  //Process changes to a specific snapshot
+  app.post("/api/editsnapshot", function(req, res) {
+    console.log(req.body);
+    db.Snapshots.update(req.body, {
       where: {
-        snapshotId: req.params.snapshotid
+        id: req.body.snapshotId
       }
-    }).then(function(result) {
-      res.json(result);
+    }).then(function() {
+      res.redirect("/page_patientsearch");
     });
   });
 
