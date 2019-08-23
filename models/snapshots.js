@@ -7,12 +7,9 @@ module.exports = function(sequelize, DataTypes) {
         isNumeric: true
       }
     },
-    physicianId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        isNumeric: true
-      }
+    physicianName: {
+      type: DataTypes.STRING,
+      allowNull: true
     },
     snapshotDate: {
       type: DataTypes.DATEONLY,
@@ -49,7 +46,10 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     systolicBloodPressure: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      validate: {
+        isNumeric: true
+      }
     },
     diastolicBloodPressure: {
       type: DataTypes.INTEGER,
@@ -58,10 +58,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     comments: {
-      type: DataTypes.STRING,
-      validate: {
-        isNumeric: true
-      }
+      type: DataTypes.STRING
     }
   });
   return Snapshots;

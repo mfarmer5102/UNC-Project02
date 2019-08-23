@@ -1,5 +1,26 @@
-<h2>
-    View patient snapshots.
-</h2>
+{{#each snapshot}}
 
-<script src="/js/patientSearch.js"></script>
+{{!-- Patient Profile Navbar --}}
+<div class="alert alert-secondary text-center" style="display: flex; justify-content: space-evenly" role="alert">
+    <i data-patientId={{this.id}} id='patientInformationLink' class="fas fa-user-alt fa-3x"></i>
+    <i data-patientId={{this.patientId}} id='patientSnapshotLink' class="fas fa-clipboard-list fa-3x"></i>
+</div>
+
+{{!-- Snapshot Information Card --}}
+<div data-snapshotId={{this.id}} class='snapshot-card card animated fadeInUpBig'>
+    <div class='card-header'><strong>{{this.snapshotDate}}</strong></div>
+    <div class='card-body'>
+        Performing Physician: {{this.physicianName}} <br />
+        Pulse: {{this.pulse}} <br />
+        Weight: {{this.weightValue}} lbs <br />
+        Height: {{this.heightValue}}" <br />
+        Body Temperature: {{this.temperature}} <br />
+        Diabetic Status: {{this.isDiabetic}} <br />
+        Blood Pressure: {{this.systolicBloodPressure}} / {{this.diastolicBloodPressure}} <br />
+        Comments: {{this.comments}} <br />
+    </div>
+</div>
+
+{{/each}}
+
+<script src="/js/patientSnapshots.js"></script>
