@@ -10,7 +10,12 @@ function drawCards(response) {
   body.append("SSN: " + response[i].ssn);
 
   //Define and fill card
-  var card = $("<div class='card animated fadeInUpBig'></div>");
+  var card = $("<a></a>");
+  card.attr("href", "/page_patientinformation");
+  card.css("color", "black");
+  card.css("text-decoration", "none");
+  card.addClass("patient-card card animated fadeInUpBig");
+
   card.append(header);
   card.append(body);
 
