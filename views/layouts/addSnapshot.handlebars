@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a Snapshot</title>
+</head>
+
+<body>
+
+    <h2>Add a Patient</h2>
+    <form class="create-form">
+        <div class="form-group">
+            <label for="first">First Name: </label>
+            <input type="text" id="first" name="firstName">
+        </div>
+        <div class="form-group">
+            <label for="last">Last Name: </label>
+            <input type="text" id="last" name="lastName">
+        </div>
+        <div class="form-group">
+            <label for="ssn">Social Security Number: </label>
+            <input type="text" id="ssn" name="socialSecurity">
+        </div>
+        <div class="form-group">
+            <label for="desc">Patient Description: </label>
+            <textarea id="desc" name="Patient description">
+        </div>
+        <form action="/" method="POST">
+            <textarea type="text" name="addPatient"></textarea>
+            <button type="submit">Add Patient</button>
+    </form>
+
+</body>
+
+<button type="submit">Confirm</button>
+
+</html>
