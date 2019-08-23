@@ -1,20 +1,25 @@
 {{!-- Page Header --}}
 <h4 class="pageHeader">Find a Patient</h4>
 
-{{!-- Search Box --}}
-<form id='patientSearchForm' class="input-group mb-3">
-  <input id='patientSearchBar' type="text" class="form-control" placeholder="Patient SSN">
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="submit">Search</button>
+<div class='row'>
+  <div class='col-sm-6 col-xs-12'>
+    {{!-- Search Box --}}
+    <form id='patientSearchForm' class="input-group mb-3">
+      <input id='patientSearchBar' type="text" class="form-control" placeholder="Patient SSN">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
+      </div>
+    </form>
+
+    {{!-- Link for Adding New Patient --}}
+    <a href='/page_addpatient' class='btn btn-success text-center' style="width: 100%">Add a New Patient</a>
+    <br><br>
   </div>
-</form>
-
-{{!-- Link for Adding New Patient --}}
-<a href='/page_addpatient' class='btn btn-success text-center' style="width: 100%">Add a New Patient</a>
-<br><br>
-
-{{!-- Card Container --}}
-<div id='cardContainer'></div>
+  <div class='col-sm-6 col-xs-12'>
+    {{!-- Card Container --}}
+    <div id='cardContainer'></div>
+  </div>
+</div>
 
 {{!-- Scripts --}}
 <script src="/js/patientSearch.js"></script>

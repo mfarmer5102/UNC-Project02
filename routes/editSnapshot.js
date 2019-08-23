@@ -44,7 +44,7 @@ module.exports = function(app) {
   app.delete("/api/editsnapshot/:snapshotid", function(req, res) {
     db.Snapshots.destroy({
       where: {
-        snapshotId: req.params.snapshotid
+        id: req.params.snapshotid
       }
     }).then(function(result) {
       res.json(result);

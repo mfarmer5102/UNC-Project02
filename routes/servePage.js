@@ -1,5 +1,4 @@
 var db = require("../models");
-console.log(db);
 
 module.exports = function(app) {
   //Send the user the login page upon arrival
@@ -20,8 +19,6 @@ module.exports = function(app) {
       }
     }).then(function(result) {
       if (result !== null) {
-        console.log(result);
-        console.log(result.dataValues);
         var resArr = [];
         resArr.push(result.dataValues);
         res.render("patientInformation", { patient: resArr });
@@ -59,8 +56,6 @@ module.exports = function(app) {
       }
     }).then(function(result) {
       if (result !== null) {
-        console.log(result);
-        console.log(result.dataValues);
         var resArr = [];
         resArr.push(result.dataValues);
         res.render("editPatient", { patient: resArr });

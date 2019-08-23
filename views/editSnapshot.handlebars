@@ -1,57 +1,69 @@
-<h4 class="pageHeader">Edit Snapshot</h4>
-
 {{#each snapshot}}
 
 <form method="POST" action='/api/editsnapshot'>
-    <div class="form-group">
-        <label for="snapshotId">Snapshot ID</label>
-        <input readonly type="text" class="form-control" name="snapshotId" value="{{this.id}}">
+    <div class="row">
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="snapshotId">Snapshot ID</label>
+            <input readonly type="text" class="form-control" name="snapshotId" value="{{this.id}}">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="patientId">Patient ID</label>
+            <input readonly type="text" class="form-control" name="patientId" value="{{this.patientId}}">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="snapshotDate">Date</label>
+            <input type="date" class="form-control" name="snapshotDate" value="{{this.snapshotDate}}">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="physicianName">Performing Physician</label>
+            <input type="text" class="form-control" name="physicianName" value="{{this.physicianName}}">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="pulse">Pulse</label>
+            <input type="number" class="form-control" name="pulse" value="{{this.pulse}}">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="temperature">Temperature</label>
+            <input type="number" class="form-control" name="temperature" value="{{this.temperature}}">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="weightValue">Weight (Pounds)</label>
+            <input type="number" class="form-control" name="weightValue" value="{{this.weightValue}}">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="heightValue">Height (Inches)</label>
+            <input type="number" class="form-control" name="heightValue" value="{{this.heightValue}}">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="isDiabetic">Diabetic Status</label>
+            <input type="text" class="form-control" name="isDiabetic" value="{{this.isDiabetic}}">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="systolicBloodPressure">Systolic Blood Pressure</label>
+            <input type="number" class="form-control" name="systolicBloodPressure"
+                value="{{this.systolicBloodPressure}}">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="diastolicBloodPressure">Diastolic Blood Pressure</label>
+            <input type="number" class="form-control" name="diastolicBloodPressure"
+                value="{{this.diastolicBloodPressure}}">
+        </div>
+        <div class="form-group col-sm-6 col-xs-12">
+            <label for="comments">Comments</label>
+            <textarea type="text" class="form-control" name="comments"></textarea value="{{this.comments}}">
+        </div>
     </div>
-    <div class="form-group">
-        <label for="patientId">Patient ID</label>
-        <input readonly type="text" class="form-control" name="patientId" value="{{this.patientId}}">
+    <div class='row'>
+        <div class='col'>
+            <div id='deleteSnapshotButton' data-snapshotIdToDelete={{this.id}} class="btn btn-danger" style="width: 100%">Delete Snapshot</div>
+        </div>
+        <div class='col'>
+            <button type="submit" class="btn btn-primary" style="width: 100%">Save Changes</button>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="snapshotDate">Date</label>
-        <input type="date" class="form-control" name="snapshotDate" value="{{this.snapshotDate}}">
-    </div>
-    <div class="form-group">
-        <label for="physicianName">Performing Physician</label>
-        <input type="text" class="form-control" name="physicianName" value="{{this.physicianName}}">
-    </div>
-    <div class="form-group">
-        <label for="pulse">Pulse</label>
-        <input type="number" class="form-control" name="pulse" value="{{this.pulse}}">
-    </div>
-    <div class="form-group">
-        <label for="temperature">Temperature</label>
-        <input type="number" class="form-control" name="temperature" value="{{this.temperature}}">
-    </div>
-    <div class="form-group">
-        <label for="weightValue">Weight (Pounds)</label>
-        <input type="number" class="form-control" name="weightValue" value="{{this.weightValue}}">
-    </div>
-    <div class="form-group">
-        <label for="heightValue">Height (Inches)</label>
-        <input type="number" class="form-control" name="heightValue" value="{{this.heightValue}}">
-    </div>
-    <div class="form-group">
-        <label for="isDiabetic">Diabetic Status</label>
-        <input type="text" class="form-control" name="isDiabetic" value="{{this.isDiabetic}}">
-    </div>
-    <div class="form-group">
-        <label for="systolicBloodPressure">Systolic Blood Pressure</label>
-        <input type="number" class="form-control" name="systolicBloodPressure" value="{{this.systolicBloodPressure}}">
-    </div>
-    <div class="form-group">
-        <label for="diastolicBloodPressure">Diastolic Blood Pressure</label>
-        <input type="number" class="form-control" name="diastolicBloodPressure" value="{{this.diastolicBloodPressure}}">
-    </div>
-    <div class="form-group">
-        <label for="comments">Comments</label>
-        <textarea type="text" class="form-control" name="comments"></textarea value="{{this.comments}}">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 {{/each}}
+
+{{!-- Scripts --}}
+<script src="/js/editSnapshot.js"></script>

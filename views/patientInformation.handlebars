@@ -1,125 +1,134 @@
+{{!-- Patient Profile Navbar --}}
+<div id='profileNavbarHolder'></div>
+
 {{#each patient}}
 
-{{!-- Patient Profile Navbar --}}
-<div class="alert alert-secondary text-center" style="display: flex; justify-content: space-evenly" role="alert">
-    <i data-patientId={{this.id}} id='patientInformationLink' class="fas fa-user-alt fa-3x"></i>
-    <i data-patientId={{this.id}} id='patientSnapshotLink' class="fas fa-clipboard-list fa-3x"></i>
-</div>
+<div class='row'>
+    <div class='col-sm-6 col-xs-12 animated slideInLeft'>
 
-{{!-- Patient Name and Photo --}}
-<div id='patientNameAndPhoto' class="text-center animated fadeInUpBig">
-    <h3>{{this.firstName}} {{this.lastName}}</h3>
-    <img src={{this.photoURL}} style='height: 150px; width: 150px; border-radius: 100%'>
-</div>
+        {{!-- Patient Name and Photo --}}
+        <div id='patientNameAndPhoto' class="text-center">
+            <h3>{{this.firstName}} {{this.lastName}}</h3>
+            <img src={{this.photoURL}} style='height: 150px; width: 150px; border-radius: 100%'>
+        </div>
 
-{{!-- Page Break --}}
-<br><br>
+        {{!-- Page Break --}}
+        <br><br>
 
-{{!-- Link for Adding New Snapshot --}}
-<div class='animated fadeInUpBig'>
-    <a href='/page_addsnapshot/{{this.id}}' class='btn btn-success text-center' style="width: 100%">Add a New
-        Snapshot</a>
-</div>
-<br><br>
+        {{!-- Link for Adding New Snapshot --}}
+        <div>
+            <a href='/page_addsnapshot/{{this.id}}' class='btn btn-success text-center' style="width: 100%">Add a New
+                Snapshot</a>
+        </div>
+        <br>
 
-{{!-- Personal Info Card --}}
-<div id='patientPersonalInfoCard' class='card animated fadeInUpBig'>
-    <div class='card-header'><strong>Personal Info</strong></div>
-    <div class='card-body'>
-        <table class='table table-borderless'>
-            <tr>
-                <td>
-                    Birthday:
-                </td>
-                <td>
-                    {{this.birthDate}}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Gender:
-                </td>
-                <td>
-                    {{this.gender}}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    SSN:
-                </td>
-                <td>
-                    {{this.ssn}}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Primary Physician:
-                </td>
-                <td>
-                    {{this.primaryPhysicianName}}
-                </td>
-            </tr>
-        </table>
+        {{!-- Edit Patient Info Button --}}
+        <div>
+            <div data-patientId={{this.id}} id='editPatientButton' class='btn btn-primary' style="width: 100%">Edit
+                Patient
+                Info
+            </div>
+        </div>
+
+        {{!-- Page Break --}}
+        <br><br>
+
     </div>
+    <div class='col-sm-6 col-xs-12 animated slideInRight'>
+        {{!-- Personal Info Card --}}
+        <div id='patientPersonalInfoCard' class='card'>
+            <div class='card-header'><strong>Personal Info</strong></div>
+            <div class='card-body'>
+                <table class='table table-borderless'>
+                    <tr>
+                        <td>
+                            Birthday:
+                        </td>
+                        <td>
+                            {{this.birthDate}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Gender:
+                        </td>
+                        <td>
+                            {{this.gender}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            SSN:
+                        </td>
+                        <td>
+                            {{this.ssn}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Primary Physician:
+                        </td>
+                        <td>
+                            {{this.primaryPhysicianName}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
-</div>
+        </div>
 
-{{!-- Page Break --}}
-<br><br>
+        {{!-- Page Break --}}
+        <br><br>
 
-{{!-- Contact Info Card --}}
-<div id='patientContactInfoCard' class='card animated fadeInUpBig'>
-    <div class='card-header'><strong>Contact Info</strong></div>
-    <div class='card-body'>
-        <table class='table table-borderless'>
-            <tr>
-                <td>
-                    Phone Number:
-                </td>
-                <td>
-                    {{this.phoneNumber}}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Email:
-                </td>
-                <td>
-                    {{this.email}}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Emergency Contact Name:
-                </td>
-                <td>
-                    {{this.emergencyContactName}}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Emergency Contact Phone:
-                </td>
-                <td>
-                    {{this.emergencyContactNumber}}
-                </td>
-            </tr>
-        </table>
+        {{!-- Contact Info Card --}}
+        <div id='patientContactInfoCard' class='card'>
+            <div class='card-header'><strong>Contact Info</strong></div>
+            <div class='card-body'>
+                <table class='table table-borderless'>
+                    <tr>
+                        <td>
+                            Phone Number:
+                        </td>
+                        <td>
+                            {{this.phoneNumber}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Email:
+                        </td>
+                        <td>
+                            {{this.email}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Emergency Contact Name:
+                        </td>
+                        <td>
+                            {{this.emergencyContactName}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Emergency Contact Phone:
+                        </td>
+                        <td>
+                            {{this.emergencyContactNumber}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        {{!-- Page Break --}}
+        <br><br>
     </div>
-
 </div>
-
-{{!-- Page Break --}}
-<br><br>
-
-{{!-- Edit Patient Info Button --}}
-<div data-patientId={{this.id}} id='editPatientButton' class='btn btn-primary' style="width: 100%">Edit Patient Info
-</div>
-
-{{!-- Page Break --}}
-<br><br>
 
 {{/each}}
 
 {{!-- Scripts --}}
 <script src="/js/patientInformation.js"></script>
+<script src="/js/renderProfileNavbar.js"></script>
