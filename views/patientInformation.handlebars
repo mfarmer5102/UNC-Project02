@@ -4,78 +4,80 @@
 {{#each patient}}
 
 <div class='row'>
-    <div class='col-sm-6 col-xs-12 animated slideInLeft'>
+    <div class='col-lg-4 col-md-12 animated fadeInUpBig'>
 
-        {{!-- Patient Name and Photo --}}
-        <div id='patientNameAndPhoto' class="text-center">
-            <h3>{{this.firstName}} {{this.lastName}}</h3>
-            <img src={{this.photoURL}} style='height: 150px; width: 150px; border-radius: 100%'>
-        </div>
-
-        {{!-- Page Break --}}
-        <br><br>
-
-        {{!-- Link for Adding New Snapshot --}}
-        <div>
-            <a href='/page_addsnapshot/{{this.id}}' class='btn btn-success text-center' style="width: 100%">Add a New
-                Snapshot</a>
-        </div>
-        <br>
-
-        {{!-- Edit Patient Info Button --}}
-        <div>
-            <div data-patientId={{this.id}} id='editPatientButton' class='btn btn-primary' style="width: 100%">Edit
-                Patient
-                Info
+        <div class="card p-5 mb-3">
+            {{!-- Patient Name and Photo --}}
+            <div id='patientNameAndPhoto' class="text-center">
+                <h3>{{this.firstName}} {{this.lastName}}</h3>
+                <br>
+                <img src={{this.photoURL}} style='height: 150px; width: 150px; border-radius: 100%'>
             </div>
+
+            {{!-- Page Break --}}
+            <br><br>
+
+            {{!-- Link for Adding New Snapshot --}}
+            <div>
+                <a href='/page_addsnapshot/{{this.id}}' class='btn btn-success text-center' style="width: 100%">Add a
+                    New
+                    Snapshot</a>
+            </div>
+            <br>
+
+            {{!-- Edit Patient Info Button --}}
+            <div>
+                <div data-patientId={{this.id}} id='editPatientButton' class='btn btn-primary' style="width: 100%">Edit
+                    Patient
+                    Info
+                </div>
+            </div>
+
         </div>
-
-        {{!-- Page Break --}}
-        <br><br>
-
     </div>
-    <div class='col-sm-6 col-xs-12 animated slideInRight'>
+
+    <div class='col-lg-8 col-md-12 animated fadeInUpBig'>
         {{!-- Personal Info Card --}}
-        <div id='patientPersonalInfoCard' class='card'>
+        <div id='patientPersonalInfoCard' class='card mb-3'>
             <div class='card-header'><strong>Personal Info</strong></div>
             <div class='card-body'>
-                <table class='table table-borderless'>
+                <table class='table table-sm table-borderless' style="margin-bottom: 0px">
                     <tr>
-                        <td>
+                        <th>
                             Birthday:
-                        </td>
+                        </th>
                         <td>
                             {{this.birthDate}}
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <th>
                             Gender:
-                        </td>
+                        </th>
                         <td>
                             {{this.gender}}
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <th>
                             SSN:
-                        </td>
+                        </th>
                         <td>
                             {{this.ssn}}
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <th>
                             Primary Physician:
-                        </td>
+                        </th>
                         <td>
                             {{this.primaryPhysicianName}}
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <th>
                             UUID:
-                        </td>
+                        </th>
                         <td>
                             {{this.uuid}}
                         </td>
@@ -85,42 +87,40 @@
 
         </div>
 
-        {{!-- Page Break --}}
-        <br><br>
-
         {{!-- Contact Info Card --}}
-        <div id='patientContactInfoCard' class='card'>
+
+        <div id='patientContactInfoCard' class='card mb-3'>
             <div class='card-header'><strong>Contact Info</strong></div>
             <div class='card-body'>
-                <table class='table table-borderless'>
+                <table class='table table-sm table-borderless' style="margin-bottom: 0px">
                     <tr>
-                        <td>
+                        <th>
                             Phone Number:
-                        </td>
+                        </th>
                         <td>
                             {{this.phoneNumber}}
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <th>
                             Email:
-                        </td>
+                        </th>
                         <td>
                             {{this.email}}
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <th>
                             Emergency Contact Name:
-                        </td>
+                        </th>
                         <td>
                             {{this.emergencyContactName}}
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <th>
                             Emergency Contact Phone:
-                        </td>
+                        </th>
                         <td>
                             {{this.emergencyContactNumber}}
                         </td>
@@ -129,10 +129,8 @@
             </div>
 
         </div>
-
-        {{!-- Page Break --}}
-        <br><br>
     </div>
+</div>
 </div>
 
 {{/each}}

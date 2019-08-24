@@ -6,7 +6,7 @@ module.exports = function(app) {
   app.post("/api/addpatient", function(req, res) {
     db.Patients.create(req.body).then(function(result) {
       console.log(result);
-      res.redirect("/page_patientsearch");
+      res.redirect("/page_patientsearch/");
     });
   });
 };

@@ -9,7 +9,7 @@ module.exports = function(app) {
         id: req.body.patientId
       }
     }).then(function() {
-      res.redirect("/page_patientsearch");
+      res.redirect("/page_patientinformation/" + req.body.patientId);
     });
   });
 

@@ -33,7 +33,8 @@ module.exports = function(app) {
     db.Snapshots.findAll({
       where: {
         patientId: req.params.patientid
-      }
+      },
+      order: [["snapshotDate", "DESC"]]
     }).then(function(result) {
       if (result !== null) {
         res.render("patientSnapshots", { snapshot: result });

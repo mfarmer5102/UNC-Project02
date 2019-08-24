@@ -1,3 +1,4 @@
+//Delete snapshot button
 $(document).on("click", "#deleteSnapshotButton", function() {
   var snapshotId = $(this).attr("data-snapshotIdToDelete");
   $.ajax({
@@ -8,4 +9,10 @@ $(document).on("click", "#deleteSnapshotButton", function() {
     console.log("DELETE REQUEST SENT");
   });
   window.location.replace("/page_patientsearch");
+});
+
+$(document).on("click", "#cancelButton", function() {
+  window.location.replace(
+    "/page_patientsnapshots/" + localStorage.getItem("activePatientId")
+  );
 });
