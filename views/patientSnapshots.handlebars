@@ -5,19 +5,82 @@
 
     {{#each snapshot}}
 
-    <div class='col-sm-6 col-xs-12'>
+    <div class='col-md-6 col-sm-12'>
         {{!-- Snapshot Information Card --}}
         <div data-snapshotId={{this.id}} class='snapshot-card card animated fadeInUpBig'>
             <div class='card-header'><strong>{{this.snapshotDate}}</strong></div>
             <div class='card-body'>
-                Performing Physician: {{this.physicianName}} <br />
-                Pulse: {{this.pulse}} <br />
-                Weight: {{this.weightValue}} lbs <br />
-                Height: {{this.heightValue}}" <br />
-                Body Temperature: {{this.temperature}} <br />
-                Diabetic Status: {{this.isDiabetic}} <br />
-                Blood Pressure: {{this.systolicBloodPressure}} / {{this.diastolicBloodPressure}} <br />
-                Comments: {{this.comments}} <br />
+                <table class='table table-sm table-borderless' style="margin-bottom: 0px">
+                    <tr>
+                        <td>
+                            Performing Physician:
+                        </td>
+                        <td>
+                            {{this.physicianName}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Pulse:
+                        </td>
+                        <td>
+                            {{this.pulse}} bpm
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Weight:
+                        </td>
+                        <td>
+                            {{this.weightValue}} lbs
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Height:
+                        </td>
+                        <td>
+                            {{this.heightValue}} inches
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Body Temperature:
+                        </td>
+                        <td>
+                            {{this.temperature}} °F
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Diabetic Status:
+                        </td>
+                        <td>
+                            {{this.isDiabetic}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Blood Pressure:
+                        </td>
+                        <td>
+                            {{this.systolicBloodPressure}} / {{this.diastolicBloodPressure}} mmHg
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <div><strong>Comments:</strong></div>
+                {{#if this.comments}}
+                <div>{{this.comments}}</div>
+                {{else}}
+                No comments for this snapshot.
+                {{/if}}
             </div>
         </div>
         <br>

@@ -36,7 +36,7 @@ module.exports = function(app) {
         id: req.body.snapshotId
       }
     }).then(function() {
-      res.redirect("/page_patientsearch");
+      res.redirect("/page_patientsnapshots/" + req.body.patientId);
     });
   });
 

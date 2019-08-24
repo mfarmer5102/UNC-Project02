@@ -1,3 +1,4 @@
+//Delete patient button
 $(document).on("click", "#deletePatientButton", function() {
   var patientId = $(this).attr("data-patientIdToDelete");
   $.ajax({
@@ -8,4 +9,11 @@ $(document).on("click", "#deletePatientButton", function() {
     console.log("DELETE REQUEST SENT");
   });
   window.location.replace("/page_patientsearch");
+});
+
+//Cancel button
+$(document).on("click", "#cancelButton", function() {
+  var queryURL =
+    "/page_patientinformation/" + localStorage.getItem("activePatientId");
+  window.location.replace(queryURL);
 });
