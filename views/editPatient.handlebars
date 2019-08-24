@@ -4,56 +4,58 @@
     <div class="row">
         <div class="form-group col-md-6 col-sm-12" style="display: none">
             <label for="patientId">ID</label>
-            <input type="text" class="form-control" name="patientId" value={{this.id}}>
+            <input type="text" class="form-control" name="patientId" value="{{this.id}}">
         </div>
         <div class="form-group col-md-6 col-sm-12">
             <label for="firstName">First Name</label>
-            <input type="text" class="form-control" name="firstName" value={{this.firstName}}>
+            <input type="text" class="form-control" name="firstName" value="{{this.firstName}}">
         </div>
         <div class="form-group col-md-6 col-sm-12">
             <label for="lastName">Last Name</label>
-            <input type="text" class="form-control" name="lastName" value={{this.lastName}}>
+            <input type="text" class="form-control" name="lastName" value="{{this.lastName}}">
         </div>
         <div class="form-group col-md-6 col-sm-12">
             <label for="birthDate">Birthday</label>
-            <input type="date" class="form-control" name="birthDate" value={{this.birthDate}}>
+            <input type="date" class="form-control" name="birthDate" value="{{this.birthDate}}">
         </div>
         <div class="form-group col-md-6 col-sm-12">
             <label for="gender">Gender</label>
-            <input readonly type="text" class="form-control" name="gender" value={{this.gender}}>
+            <input readonly type="text" class="form-control" name="gender" value="{{this.gender}}">
         </div>
         <div class="form-group col-md-6 col-sm-12">
             <label for="ssn">SSN</label>
-            <input type="text" class="form-control" name="ssn" value={{this.ssn}}>
+            <input type="text" class="form-control" name="ssn" value="{{this.ssn}}">
         </div>
         <div class="form-group col-md-6 col-sm-12">
             <label for="photoURL">Photo URL</label>
-            <input type="text" class="form-control" name="photoURL" value={{this.photoURL}}>
+            <input type="text" class="form-control" name="photoURL" value="{{this.photoURL}}">
         </div>
         <div class="form-group col-md-6 col-sm-12">
             <label for="primaryPhysicianName">Primary Physician</label>
-            <input type="text" class="form-control" name="primaryPhysicianName" value={{this.primaryPhysicianName}}>
+            <input type="text" class="form-control" name="primaryPhysicianName" value="{{this.primaryPhysicianName}}">
         </div>
         <div class="form-group col-md-6 col-sm-12">
             <label for="phoneNumber">Phone Number</label>
-            <input type="text" class="form-control" name="phoneNumber" value={{this.phoneNumber}}>
+            <input type="text" class="form-control" name="phoneNumber" value="{{this.phoneNumber}}">
         </div>
         <div class="form-group col-md-6 col-sm-12">
             <label for="email">Email</label>
-            <input type="email" class="form-control" name="email" value={{this.email}}>
+            <input type="email" class="form-control" name="email" value="{{this.email}}">
         </div>
         <div class="form-group col-md-6 col-sm-12">
             <label for="emergencyContactName">Emergency Contact Name</label>
-            <input type="text" class="form-control" name="emergencyContactName" value={{this.emergencyContactName}}>
+            <input type="text" class="form-control" name="emergencyContactName" value="{{this.emergencyContactName}}">
         </div>
         <div class="form-group col-md-6 col-sm-12">
             <label for="emergencyContactNumber">Emergency Contact Number</label>
-            <input type="text" class="form-control" name="emergencyContactNumber" value={{this.emergencyContactNumber}}>
+            <input type="text" class="form-control" name="emergencyContactNumber"
+                value="{{this.emergencyContactNumber}}">
         </div>
     </div>
     <div class='row alert alert-dark'>
         <div class='col'>
-            <div id='deletePatientButton' data-patientIdToDelete={{this.id}} class="btn btn-danger" style="width: 100%">
+            <div id='deletePatientButton' data-patientIdToDelete="{{this.id}}" class="btn btn-danger"
+                style="width: 100%">
                 Delete Patient</div>
         </div>
         <div class='col'>
