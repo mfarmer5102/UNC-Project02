@@ -1,0 +1,98 @@
+<div class='card mb-3'>
+    <div class='card-header'>
+        <strong>Pulse</strong>
+    </div>
+    <div class='card-body'>
+        {{!-- Place canvas --}}
+        <canvas id="pulseGraph" width="400" max-height="400"></canvas>
+    </div>
+</div>
+
+<div class='card mb-3'>
+    <div class='card-header'>
+        <strong>Blood Pressure</strong>
+    </div>
+    <div class='card-body'>
+        {{!-- Place canvas --}}
+        <canvas id="systolicGraph" width="400" max-height="400"></canvas>
+    </div>
+</div>
+
+<div class='card mb-3'>
+    <div class='card-header'>
+        <strong>Weight</strong>
+    </div>
+    <div class='card-body'>
+        {{!-- Place canvas --}}
+        <canvas id="weightGraph" width="400" max-height="400"></canvas>
+    </div>
+</div>
+
+<div class='card mb-3'>
+    <div class='card-header'>
+        <strong>Temperature</strong>
+    </div>
+    <div class='card-body'>
+        {{!-- Place canvas --}}
+        <canvas id="temperatureGraph" width="400" max-height="400"></canvas>
+    </div>
+</div>
+
+{{!-- ################################################################################ --}}
+
+<script>
+
+    // Global Vars /////////
+    let pulseArr = []
+    let systolicBloodPressureArr = []
+    let weightArr = []
+    let snapshotDateArr = []
+    let temperatureArr = []
+
+    // Call API /////////
+    $.ajax({
+        url: '/api/snapshots/all',
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+        for (var i = 0; i < response.length; i++) {
+            pulseArr.push(parseInt(response[i].pulse))
+            systolicBloodPressureArr.push(parseInt(response[i].systolicBloodPressure))
+            weightArr.push(parseInt(response[i].weightValue))
+            temperatureArr.push(parseInt(response[i].temperature))
+            snapshotDateArr.push(response[i].snapshotDate)
+        };
+        drawChart(pulseArr, snapshotDateArr, 'pulseGraph', 'Pulse Reading', 'line')
+        drawChart(systolicBloodPressureArr, snapshotDateArr, 'systolicGraph', 'Systolic Blood Pressure', 'line')
+        drawChart(weightArr, snapshotDateArr, 'weightGraph', 'Weight (lbs)', 'line')
+        drawChart(temperatureArr, snapshotDateArr, 'temperatureGraph', 'Temperature (Fahrenheit)', 'line')
+    });
+
+    function drawChart(dataArray, labelArray, receivingDivId, title, graphType) {
+        console.log(pulseArr)
+        var ctx = document.getElementById(receivingDivId).getContext('2d');
+        var receivingDivId = new Chart(ctx, {
+            type: graphType,
+            data: {
+                labels: labelArray,
+                datasets: [{
+                    label: title,
+                    data: dataArray,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    }
+
+</script>
