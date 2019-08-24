@@ -3,11 +3,24 @@ function drawCards(response) {
   var header = $("<div class='card-header' style='font-weight: bold'></div>");
   header.append(response[i].lastName + ", " + response[i].firstName);
 
-  //Define and fillcard body
-  var body = $("<div class='card-body'></div>");
-  body.append("Birthdate: " + response[i].birthDate);
-  body.append("<br>");
-  body.append("SSN: " + response[i].ssn);
+  //Define and fill Col 1
+  var col1 = $("<div class='col-9'></div>");
+  col1.append("Birthdate: " + response[i].birthDate);
+  col1.append("<br>");
+  col1.append("SSN: " + response[i].ssn);
+
+  //Define and fill Col 2
+  var col2 = $("<div class='col-3 text-center'></div>");
+  col2.append(
+    "<img src='" +
+      response[i].photoURL +
+      "' style='height: 50px; width: 50px; border-radius: 100%'>"
+  );
+
+  //Define and fill card body
+  var body = $("<div class='card-body row' style='position: relative'></div>");
+  body.append(col2);
+  body.append(col1);
 
   //Define and fill card
   var card = $("<a></a>");
