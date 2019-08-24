@@ -31,7 +31,7 @@ require("./routes/addSnapshot")(app);
 require("./routes/editPatient")(app);
 require("./routes/editSnapshot")(app);
 
-var syncOptions = { force: false };
+var syncOptions = { force: false, alter: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
