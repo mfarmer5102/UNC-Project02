@@ -59,7 +59,7 @@ $(document).on("submit", "#loginForm", function() {
 });
 
 //Sign up
-signUpButton.addEventListener("click touchstart", function(e) {
+signUpButton.addEventListener("click", function(e) {
   console.log(e);
   var email = inputEmail.value;
   var pass = inputPassword.value;
@@ -74,7 +74,7 @@ signUpButton.addEventListener("click touchstart", function(e) {
 });
 
 //Continue as guest
-guestButton.addEventListener("click touchstart", function(e) {
+guestButton.addEventListener("click", function(e) {
   console.log(e);
   var email = "guest@email.com";
   var pass = "guest1";
