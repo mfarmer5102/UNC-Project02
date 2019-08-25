@@ -34,9 +34,28 @@
             </div>
 
         </div>
+
+        {{!-- QR Link Card --}}
+        <div id='patientQRLinkCard' class='card mb-3' data-patientId='{{this.id}}'>
+            <div class='card-header'><strong>QR Link</strong></div>
+            <div class='card-body text-center'>
+                <canvas id="canvas"></canvas>
+                <script src="/js/qrcode.min.js"></script>
+                {{!-- Code extracted from npm node-qrcode package at https://www.npmjs.com/package/qrcode under MIT license--}}
+                <script>
+                    var url = "http://patientplus.herokuapp.com/page_patientinformation/" + $('#patientQRLinkCard').attr('data-patientId')
+                    QRCode.toCanvas(document.getElementById('canvas'), url, function (error) {
+                        if (error) console.error(error)
+                        console.log('success!');
+                    })
+                </script>
+            </div>
+        </div>
+
     </div>
 
     <div class='col-lg-8 col-md-12 animated fadeInUpBig'>
+
         {{!-- Personal Info Card --}}
         <div id='patientPersonalInfoCard' class='card mb-3'>
             <div class='card-header'><strong>Personal Info</strong></div>
@@ -88,7 +107,6 @@
         </div>
 
         {{!-- Contact Info Card --}}
-
         <div id='patientContactInfoCard' class='card mb-3'>
             <div class='card-header'><strong>Contact Info</strong></div>
             <div class='card-body'>
@@ -129,6 +147,7 @@
             </div>
 
         </div>
+
     </div>
 </div>
 </div>

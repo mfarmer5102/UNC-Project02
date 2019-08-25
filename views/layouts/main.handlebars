@@ -75,7 +75,7 @@
   <nav id='header' class="navbar fixed-top text-light">
     <img src='https://raw.githubusercontent.com/cafeamericano/UNC-Project02/master/public/logo.png'
       style="height: 50px">
-    <a href='/' style="color: white"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+    <a href='/' id='logoutButton' style="color: white"><i class="fas fa-sign-out-alt fa-2x"></i></a>
   </nav>
 
   {{!-- Templated Content --}}
@@ -86,9 +86,14 @@
   {{!-- Footer --}}
   <nav id='footer' class="navbar fixed-bottom text-light">
     <div><i class="far fa-calendar-alt fa-2x"></i></div>
+    <div id='loggedInIndicator' style="font-family: Roboto"></div>
     <a href='/page_patientSearch' style="color: white"><i class="fas fa-search fa-2x"></i></a>
   </nav>
 
+  {{!-- Firebase --}}
+  <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-auth.js"></script>
+  <script src="../js/authorizationRevoke.js"></script>
 </body>
 
 </html>
