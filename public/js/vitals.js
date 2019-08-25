@@ -8,7 +8,7 @@ function grabData(patientId) {
   var snapshotDateArr = [];
   var temperatureArr = [];
 
-  // Call API /////////
+  // Call API //////////
   $.ajax({
     url: "/api/snapshots/all/" + patientId,
     method: "GET"
