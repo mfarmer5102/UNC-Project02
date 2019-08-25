@@ -86,4 +86,9 @@ module.exports = function(app) {
       }
     });
   });
+
+  //Send the Vitals page
+  app.get("/vitals", function(req, res) {
+    res.render("vitals");
+  });
 };

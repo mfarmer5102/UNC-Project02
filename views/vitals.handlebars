@@ -1,0 +1,58 @@
+{{!-- Patient Profile Navbar --}}
+<div id='profileNavbarHolder'></div>
+
+<section class="row animated fadeInUpBig">
+
+    {{!-- Pulse Graph --}}
+    <div class='col-md-6 col-sm-12'>
+        <div class='card vitals-card mb-3'>
+            <div class='card-header'>
+                <strong>Pulse</strong>
+            </div>
+            <div class='card-body'>
+                <canvas id="pulseGraph" width="400" max-height="400"></canvas>
+            </div>
+        </div>
+    </div>
+
+    {{!-- Systolic Blood Pressure --}}
+    <div class='col-md-6 col-sm-12'>
+        <div class='card vitals-card mb-3'>
+            <div class='card-header'>
+                <strong>Systolic Blood Pressure</strong>
+            </div>
+            <div class='card-body'>
+                <canvas id="systolicGraph" width="400" max-height="400"></canvas>
+            </div>
+        </div>
+    </div>
+
+    {{!-- Weight --}}
+    <div class='col-md-6 col-sm-12'>
+        <div class='card vitals-card mb-3'>
+            <div class='card-header'>
+                <strong>Weight</strong>
+            </div>
+            <div class='card-body'>
+                <canvas id="weightGraph" width="400" max-height="400"></canvas>
+            </div>
+        </div>
+    </div>
+
+    {{!-- Temperature --}}
+    <div class='col-md-6 col-sm-12'>
+        <div class='card vitals-card mb-3'>
+            <div class='card-header'>
+                <strong>Temperature</strong>
+            </div>
+            <div class='card-body'>
+                <canvas id="temperatureGraph" width="400" max-height="400"></canvas>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{{!-- Scripts --}}
+<script src="/js/vitals.js"></script>
+<script src="/js/renderProfileNavbar.js"></script>
