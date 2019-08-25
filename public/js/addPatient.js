@@ -1,4 +1,4 @@
 //Cancel button
-$(document).on("click", "#cancelButton", function() {
+$(document).on("click touchstart", "#cancelButton", function() {
   window.location.replace("/page_patientSearch");
 });

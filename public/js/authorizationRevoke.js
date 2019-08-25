@@ -35,7 +35,7 @@ var logoutButton = document.getElementById("logoutButton");
 //EVENT LISTENERS########################################################################
 
 //Log out
-logoutButton.addEventListener("click", function(e) {
+logoutButton.addEventListener("click touchstart", function(e) {
   console.log(e);
   firebase.auth().signOut();
 });
