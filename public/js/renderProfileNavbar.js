@@ -46,6 +46,19 @@ function renderProfileNavbar(patientId, receivingDiv) {
   alertWrapper.append(patientAppointmentsLink);
   alertWrapper.append(patientVitalsLink);
 
+  //Define patient description line
+  var infoWrapper = $(
+    "<div class='alert alert-light text-right' role='alert'>"
+  );
+  var firstName = localStorage.getItem("activePatientFirstName");
+  var lastName = localStorage.getItem("activePatientLastName");
+  var ssn = localStorage.getItem("activePatientSSN");
+  infoWrapper.append(
+    "<strong>" + lastName + ", " + firstName + " (SSN: " + ssn + ")</strong>"
+  );
+
+  //Plant items onto the receivingDiv
+  $(receivingDiv).append(infoWrapper);
   $(receivingDiv).append(alertWrapper);
 }
 
@@ -66,6 +79,11 @@ $(document).on("click", "#patientInformationLink", function() {
 $(document).on("click", "#patientSnapshotLink", function() {
   var patientId = $(this).attr("data-patientId");
   window.location.replace("/page_patientsnapshots/" + patientId);
+});
+
+$(document).on("click", "#patientVitalsLink", function() {
+  //var patientId = $(this).attr("data-patientId");
+  window.location.replace("/vitals");
 });
 
 //Hover animation ////////////////////////////////////////////////

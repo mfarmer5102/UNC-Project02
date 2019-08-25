@@ -27,7 +27,12 @@ function drawCards(response) {
   card.css("color", "black");
   card.css("text-decoration", "none");
   card.addClass("patient-card card animated fadeInUpBig");
+
+  //Tie patient info to card
   card.attr("data-patientId", response[i].id);
+  card.attr("data-firstName", response[i].firstName);
+  card.attr("data-lastName", response[i].lastName);
+  card.attr("data-ssn", response[i].ssn);
 
   card.append(header);
   card.append(body);
@@ -76,7 +81,18 @@ $(document).on("submit", "#patientSearchForm", function() {
 
 //Handle click on card
 $(document).on("click", ".patient-card", function() {
+  //Prepare data for storage
   var patientId = $(this).attr("data-patientId");
-  window.location.replace("/page_patientinformation/" + patientId);
+  var patientFirstName = $(this).attr("data-firstName");
+  var patientLastName = $(this).attr("data-lastName");
+  var patientSSN = $(this).attr("data-ssn");
+
+  //Set local storage
   localStorage.setItem("activePatientId", patientId);
+  localStorage.setItem("activePatientFirstName", patientFirstName);
+  localStorage.setItem("activePatientLastName", patientLastName);
+  localStorage.setItem("activePatientSSN", patientSSN);
+
+  //Redirect to patient info page
+  window.location.replace("/page_patientinformation/" + patientId);
 });
