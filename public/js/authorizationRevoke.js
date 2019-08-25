@@ -1,4 +1,4 @@
-//FIREBASE SETUP#########################################################################
+//FIREBASE SETUP########################################################################
 
 var firebaseConfig = {
   apiKey: "AIzaSyDIdypXltd1I_sABaWv6psEgunjfdxebkw",
@@ -17,7 +17,11 @@ firebase.initializeApp(firebaseConfig);
 firebase.auth().onAuthStateChanged(function(firebaseUser) {
   if (firebaseUser) {
     console.log(firebaseUser);
-    $("#loggedInIndicator").text(firebaseUser.email);
+    if (firebaseUser.email === "guest@email.com") {
+      $("#loggedInIndicator").text("Guest User");
+    } else {
+      $("#loggedInIndicator").text(firebaseUser.email);
+    }
   } else {
     console.log("not logged in");
     window.location.replace("/");
