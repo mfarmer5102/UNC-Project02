@@ -95,13 +95,3 @@ function drawChart(
     }
   });
 }
-
-//Hover animation ////////////////////////////////////////////////
-$(document).on("mouseenter", ".vitals-card", function() {
-  $(this).removeClass("fadeInUpBig");
-  $(this).addClass("animated pulse");
-});
-
-$(document).on("mouseleave", ".vitals-card", function() {
-  $(this).removeClass("pulse");
-});
