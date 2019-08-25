@@ -1,15 +1,11 @@
-// var db = require("../models");
-// console.log(db);
+var QRCode = require("qrcode");
 
-// module.exports = function(app) {
-//   //Find one patient by their patientId
-//   app.get("/api/patientinformation/:patientid", function(req, res) {
-//     db.Patients.findOne({
-//       where: {
-//         patientId: req.params.patientid
-//       }
-//     }).then(function(result) {
-//       res.json(result);
-//     });
-//   });
-// };
+module.exports = function(app) {
+  //Find one patient by their patientId
+  app.get("/api/patient_qrcode/:patientid", function(req, res) {
+    QRCode.toDataURL("https://www.wikipedia.org", function(err, url) {
+      console.log(err);
+      res.send(url);
+    });
+  });
+};

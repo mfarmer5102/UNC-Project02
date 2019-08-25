@@ -24,7 +24,7 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/servePage")(app);
 require("./routes/patientSearch")(app);
-//require("./routes/patientInformation")(app);
+require("./routes/patientInformation")(app);
 require("./routes/patientSnapshots")(app);
 require("./routes/addPatient")(app);
 require("./routes/addSnapshot")(app);
