@@ -75,6 +75,7 @@ signUpButton.addEventListener("click", function(e) {
 
 //Continue as guest
 guestButton.addEventListener("click", function(e) {
+  console.log(e);
   var email = "guest@email.com";
   var pass = "guest1";
   var auth = firebase.auth();

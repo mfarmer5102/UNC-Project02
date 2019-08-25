@@ -32,5 +32,6 @@ var logoutButton = document.getElementById("logoutButton");
 
 //Log out
 logoutButton.addEventListener("click", function(e) {
+  console.log(e);
   firebase.auth().signOut();
 });
