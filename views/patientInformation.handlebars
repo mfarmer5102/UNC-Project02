@@ -13,9 +13,7 @@
                 <br>
                 <img src={{this.photoURL}} style='height: 150px; width: 150px; border-radius: 100%'>
             </div>
-
-            {{!-- Page Break --}}
-            <br><br>
+            <br>
 
             {{!-- Link for Adding New Snapshot --}}
             <div>
@@ -27,7 +25,8 @@
 
             {{!-- Link for Scheduling an Appointment--}}
             <div>
-                <a href='/page_addappointment/{{this.id}}' class='btn btn-info text-center' style="width: 100%; color: white">Schedule an Appointment</a>
+                <a href='/page_addappointment/{{this.id}}' class='btn btn-info text-center'
+                    style="width: 100%; color: white">Schedule an Appointment</a>
             </div>
             <br>
 
@@ -37,6 +36,13 @@
                     Patient
                     Info
                 </div>
+            </div>
+            <br>
+
+            {{!-- Print Wristband --}}
+            <div>
+                <a href='/page_wristbandprint/{{this.id}}' class='btn btn-warning' style="width: 100%; color: white">Print Wristband
+                </a>
             </div>
 
         </div>

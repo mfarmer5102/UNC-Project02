@@ -1,0 +1,35 @@
+{{#each patient}}
+
+{{!-- QR Link Card --}}
+<span>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </span>
+<div id='patientQRLinkCard' class="row" data-patientId='{{this.id}}'>
+    <div class='text-left col-3'>
+        <canvas id="canvas"></canvas>
+        <script src="/js/qrcode.min.js"></script>
+        {{!-- Code extracted from npm node-qrcode package at https://www.npmjs.com/package/qrcode under MIT license--}}
+        <script>
+            var url = "http://patientplus.herokuapp.com/page_patientinformation/" + $('#patientQRLinkCard').attr('data-patientId')
+            QRCode.toCanvas(document.getElementById('canvas'), url, function (error) {
+                if (error) console.error(error)
+                console.log('success!');
+            })
+        </script>
+    </div>
+    <div class='text-left col-9 p-3'>
+        <strong>Name</strong>: {{this.lastName}}, {{this.firstName}}
+        <br>
+        <strong>DOB</strong>: {{this.birthDate}}
+    </div>
+</div>
+<span>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - </span>
+
+{{/each}}
+
+{{!-- Style Override --}}
+<script>
+    $('body').removeClass('bg-light')
+    $('main').removeClass('container')
+</script>
+
+{{!-- Scripts --}}
+<script src="/js/patientInformation.js"></script>

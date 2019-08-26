@@ -108,4 +108,21 @@ module.exports = function(app) {
   app.get("/vitals", function(req, res) {
     res.render("vitals");
   });
+
+  //Send the Wristband Print page
+  app.get("/page_wristbandprint/:patientid", function(req, res) {
+    db.Patients.findOne({
+      where: {
+        id: req.params.patientid
+      }
+    }).then(function(result) {
+      if (result !== null) {
+        var resArr = [];
+        resArr.push(result.dataValues);
+        res.render("wristbandprint", { patient: resArr });
+      } else {
+        res.sendStatus(418);
+      }
+    });
+  });
 };
