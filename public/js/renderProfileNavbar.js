@@ -69,6 +69,11 @@ $(document).on("click touchstart", "#patientSnapshotLink", function() {
   window.location.replace("/page_patientsnapshots/" + patientId);
 });
 
+$(document).on("click touchstart", "#patientAppointmentsLink", function() {
+  var patientId = $(this).attr("data-patientId");
+  window.location.replace("/page_patientappointments/" + patientId);
+});
+
 $(document).on("click touchstart", "#patientVitalsLink", function() {
   //var patientId = $(this).attr("data-patientId");
   window.location.replace("/vitals");

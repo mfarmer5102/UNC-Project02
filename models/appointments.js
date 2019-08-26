@@ -1,5 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   var Appointments = sequelize.define("Appointments", {
+    patientId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     firstName: {
       type: DataTypes.STRING,
       allowNull: false

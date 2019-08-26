@@ -1,10 +1,8 @@
-var uuid = require("uuid/v4");
-
 module.exports = function(sequelize, DataTypes) {
   var Patients = sequelize.define("Patients", {
     uuid: {
       type: DataTypes.STRING,
-      defaultValue: uuid()
+      allowNull: false
     },
     firstName: {
       type: DataTypes.STRING,
