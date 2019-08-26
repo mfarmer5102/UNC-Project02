@@ -6,8 +6,10 @@
                 <tr>
                     <th scope="col">Date</th>
                     <th scope="col">Time</th>
+                    <th scope="col">Patient</th>
                     <th scope="col">Physician</th>
                     <th scope="col">Reason</th>
+                    <th scope="col">Email Notice</th>
                 </tr>
             </thead>
             <tbody>
@@ -16,8 +18,10 @@
                 <tr>
                     <td>{{this.appointmentDate}}</td>
                     <td>{{this.appointmentTime}}</td>
+                    <td>{{this.lastName}}, {{this.firstName}}</td>
                     <td>{{this.physicianName}}</td>
                     <td>{{this.comments}}</td>
+                    <td>{{this.notificationEmail}}</td>
                 </tr>
                 {{/each}}
             </tbody>

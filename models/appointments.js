@@ -32,6 +32,9 @@ module.exports = function(sequelize, DataTypes) {
     comments: {
       type: DataTypes.STRING,
       isAlphsnumeric: true
+    },
+    notificationEmail: {
+      type: DataTypes.STRING
     }
   });
   return Appointments;

@@ -11,6 +11,7 @@
                     <th scope="col">Time</th>
                     <th scope="col">Physician</th>
                     <th scope="col">Reason</th>
+                    <th scope="col">Email Notice</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -21,7 +22,10 @@
                     <td>{{this.appointmentTime}}</td>
                     <td>{{this.physicianName}}</td>
                     <td>{{this.comments}}</td>
-                    <td class='text-right'><button class='btn btn-danger delete-button' style='padding: 1px 10px' data-appointmentId='{{this.id}}' data-patientId='{{this.patientId}}'><small>Delete</small></td>
+                    <td>{{this.notificationEmail}}</td>
+                    <td class='text-right'><button class='btn btn-danger delete-button' style='padding: 1px 10px'
+                            data-appointmentId='{{this.id}}' data-patientId='{{this.patientId}}'><small>Delete</small>
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>
