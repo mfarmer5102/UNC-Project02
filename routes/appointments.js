@@ -31,9 +31,8 @@ module.exports = function(app) {
 
   app.post("/api/addappointment", function(req, res) {
     db.Appointments.create(req.body).then(function() {
-      //sendEmailToPatient(req.body.notificationEmail);
       sendEmailToPatient(
-        "mfarmer5102@gmail.com",
+        req.body.notificationEmail,
         req.body.physicianName,
         req.body.firstName,
         req.body.lastName,

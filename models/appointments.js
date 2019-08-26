@@ -34,7 +34,8 @@ module.exports = function(sequelize, DataTypes) {
       isAlphsnumeric: true
     },
     notificationEmail: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: true
     }
   });
   return Appointments;
