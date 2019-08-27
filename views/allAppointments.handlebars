@@ -14,7 +14,7 @@
         dataTable.addColumn({ type: 'date', id: 'Start' });
         dataTable.addColumn({ type: 'date', id: 'End' });
 
-        let x = []
+        let allAppts = []
 
         $.ajax({
             url: `/api/allappointments`,
@@ -26,13 +26,17 @@
                 var singleAppointment = []
                 singleAppointment.push(response[i].physicianName)
                 singleAppointment.push(response[i].lastName + ", " + response[i].firstName)
-                singleAppointment.push(new Date(0, 0, 0, 12, 0, 0))
-                singleAppointment.push(new Date(0, 0, 0, 13, 30, 0))
-                x.push(singleAppointment);
+                let startHour = parseFloat(response[i].appointmentTime[0] + response[i].appointmentTime[1])
+                let startMinute = parseFloat(response[i].appointmentTime[3] + response[i].appointmentTime[4])
+                let endHour = startHour + 1
+                let endMinute = startMinute + 1
+                singleAppointment.push(new Date(0, 0, 0, startHour, startMinute, 0))
+                singleAppointment.push(new Date(0, 0, 0, endHour, endMinute, 0))
+                allAppts.push(singleAppointment);
             }
 
-            console.log(x)
-            dataTable.addRows(x);
+            console.log(allAppts)
+            dataTable.addRows(allAppts);
 
             var options = {
                 timeline: { colorByRowLabel: true }
