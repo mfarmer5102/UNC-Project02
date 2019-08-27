@@ -119,7 +119,7 @@ module.exports = function(app) {
       if (result !== null) {
         var resArr = [];
         resArr.push(result.dataValues);
-        res.render("wristbandprint", { patient: resArr });
+        res.render("wristbandPrint", { patient: resArr });
       } else {
         res.sendStatus(418);
       }
