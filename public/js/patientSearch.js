@@ -75,7 +75,7 @@ $(document).on("submit", "#patientSearchForm", function() {
     url: "/api/patientsearch/" + searchValue,
     method: "GET"
   }).then(function(response) {
-    //Clear the container to prepare for results
+    ///Clear the container to prepare for results
     $("#cardContainer").empty();
     //Convert response to an array
     var responseArr = [response];
