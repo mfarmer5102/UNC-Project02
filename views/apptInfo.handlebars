@@ -1,0 +1,93 @@
+<h1>Patient Appointment Information (office) </h1>
+<ul>
+    {{#each appointments}}
+    <li>
+        <p>
+            {{this.id}}. {{this.appointment}}
+
+            <button data-apptid="{{this.id}}" class="delappt">Delete
+                Patient Appointment</button>
+        </p>
+    </li>
+    {{/each}}
+</ul>
+
+<h2>Create a Patient Appointment</h2>
+<form id="createappt" class="button-size">
+    <textarea type="text" name="appointment"></textarea>
+    <button type="submit">Save Appointment!</button>
+</form>
+
+<h2>Update patient appointment information</h2>
+<form id="updateappt" class="button-size">
+    <select name="id">
+        {{#each appointments}}
+        <option value="{{this.id}}">{{this.appointment}}</option>
+        {{/each}}
+    </select>
+    <textarea type="text" name="appointment" placeholder="appointment"></textarea>
+    <button type="submit">Update Information.</button>
+</form>
+
+<script type="text/javascript">
+    $(".delappt").on("click", function (event) {
+
+        var id = $(this).data("planid");
+
+        // Send the DELETE request.
+        $.ajax("/api/appointments/" + id, {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log("deleted id ", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
+    $("#createappt").on("submit", function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        var newAppt = {
+            appointment: $("#createappt [name=appointment]").val().trim()
+        };
+
+        // Send the POST request.
+        $.ajax("/api/appointments", {
+            type: "POST",
+            data: newAppt
+        }).then(
+            function () {
+                console.log("created new appointment");
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
+    $("#updateappt").on("submit", function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        // Get the ID by finding an element with a "name" attribute equal to the string "id"
+        var id = $("[name=id]").val().trim();
+
+        var updatedAppt = {
+            plan: $("#updateappt [name=appointment]").val().trim()
+        };
+
+        // Send the PUT request.
+        $.ajax("/api/appointments/" + id, {
+            type: "PUT",
+            data: updatedAppt
+        }).then(
+            function () {
+                console.log("updated id ", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+</script>
