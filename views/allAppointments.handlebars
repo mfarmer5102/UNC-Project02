@@ -28,18 +28,11 @@
                 singleAppointment.push(response[i].lastName + ", " + response[i].firstName)
                 singleAppointment.push(new Date(0, 0, 0, 12, 0, 0))
                 singleAppointment.push(new Date(0, 0, 0, 13, 30, 0))
-                x = singleAppointment;
+                x.push(singleAppointment);
             }
 
             console.log(x)
-            dataTable.addRows([
-                ['Magnolia Room', 'Beginning JavaScript', new Date(0, 0, 0, 12, 0, 0), new Date(0, 0, 0, 13, 30, 0)],
-                ['Magnolia Room', 'Intermediate JavaScript', new Date(0, 0, 0, 14, 0, 0), new Date(0, 0, 0, 15, 30, 0)],
-                ['Magnolia Room', 'Advanced JavaScript', new Date(0, 0, 0, 16, 0, 0), new Date(0, 0, 0, 17, 30, 0)],
-                ['Willow Room', 'Beginning Google Charts', new Date(0, 0, 0, 12, 30, 0), new Date(0, 0, 0, 14, 0, 0)],
-                ['Willow Room', 'Intermediate Google Charts', new Date(0, 0, 0, 14, 30, 0), new Date(0, 0, 0, 16, 0, 0)],
-                x,
-                ['Willow Room', 'Advanced Google Charts', new Date(0, 0, 0, 16, 30, 0), new Date(0, 0, 0, 18, 0, 0)]]);
+            dataTable.addRows(x);
 
             var options = {
                 timeline: { colorByRowLabel: true }
