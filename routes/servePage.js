@@ -109,7 +109,7 @@ module.exports = function(app) {
     res.render("vitals");
   });
 
-  //Send the Wristband Print page
+  //Send the Wristband Print page to user
   app.get("/page_wristbandprint/:patientid", function(req, res) {
     db.Patients.findOne({
       where: {
@@ -119,7 +119,7 @@ module.exports = function(app) {
       if (result !== null) {
         var resArr = [];
         resArr.push(result.dataValues);
-        res.render("wristbandprint", { patient: resArr });
+        res.render("wristbandPrint", { patient: resArr });
       } else {
         res.sendStatus(418);
       }
