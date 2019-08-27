@@ -16,6 +16,9 @@
 
         let allAppts = []
 
+        //Ensure window ranges from 8AM to 6PM
+        allAppts.push(["Office Hours", "Office Hours", new Date(0, 0, 0, 8, 0, 0), new Date(0, 0, 0, 18, 0, 0)])
+
         $.ajax({
             url: `/api/allappointments`,
             method: 'GET',
@@ -29,13 +32,14 @@
                 let startHour = parseFloat(response[i].appointmentTime[0] + response[i].appointmentTime[1])
                 let startMinute = parseFloat(response[i].appointmentTime[3] + response[i].appointmentTime[4])
                 let endHour = startHour + 1
-                let endMinute = startMinute + 1
+                let endMinute = startMinute
                 singleAppointment.push(new Date(0, 0, 0, startHour, startMinute, 0))
                 singleAppointment.push(new Date(0, 0, 0, endHour, endMinute, 0))
                 allAppts.push(singleAppointment);
             }
 
             console.log(allAppts)
+            //Add the data
             dataTable.addRows(allAppts);
 
             var options = {
@@ -50,7 +54,10 @@
 
 <div class='row mt-5 animated fadeInUpBig'>
     <div class='col' style="overflow: scroll">
-        <div id="cal" style="height: auto;"></div>
+        <div class='p-3' style="color: white; background-image: linear-gradient(rgb(56, 98, 166), rgb(104, 134, 184))">
+            <strong>Today's Appointments</strong>
+        </div>
+        <div id="cal" style="height: auto; min-height: 250px"></div>
     </div>
 </div>
 
@@ -58,8 +65,9 @@
 <div class='row mt-5 animated fadeInUpBig'>
     <div class='col' style="max-width: 100%; overflow: scroll">
         {{#if appointment}}
-        <table class="table  table-hover">
-            <thead>
+        <table class="table table-hover" style="background: white">
+            <thead class="thead"
+                style="color: white; background-image: linear-gradient(rgb(56, 98, 166), rgb(104, 134, 184))">
                 <tr>
                     <th scope="col">Date</th>
                     <th scope="col">Time</th>
