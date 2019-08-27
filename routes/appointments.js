@@ -7,7 +7,7 @@ console.log(db);
 module.exports = function(app) {
   app.get("/api/allappointments", function(req, res) {
     db.Appointments.findAll({
-      order: [["appointmentDate", "ASC"]],
+      order: [["appointmentDate", "ASC"], ["appointmentTime", "ASC"]],
       where: {
         appointmentDate: moment()
       }
@@ -19,7 +19,7 @@ module.exports = function(app) {
 
   app.get("/page_allappointments", function(req, res) {
     db.Appointments.findAll({
-      order: [["appointmentDate", "ASC"]],
+      order: [["appointmentDate", "ASC"], ["appointmentTime", "ASC"]],
       where: {
         appointmentDate: moment()
       }
