@@ -1,11 +1,28 @@
 var db = require("../models");
 var nodemailer = require("nodemailer");
+var moment = require("moment");
+
 console.log(db);
 
 module.exports = function(app) {
+  app.get("/api/allappointments", function(req, res) {
+    db.Appointments.findAll({
+      order: [["appointmentDate", "ASC"]],
+      where: {
+        appointmentDate: moment()
+      }
+    }).then(function(result) {
+      console.log(result);
+      res.json(result);
+    });
+  });
+
   app.get("/page_allappointments", function(req, res) {
     db.Appointments.findAll({
-      order: [["appointmentDate", "ASC"]]
+      order: [["appointmentDate", "ASC"]],
+      where: {
+        appointmentDate: moment()
+      }
     }).then(function(result) {
       console.log(result);
       if (result !== null) {
