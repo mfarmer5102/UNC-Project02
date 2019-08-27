@@ -99,27 +99,36 @@ function sendEmailToPatient(
     }
   });
 
+  //Prepare the message content
+  var messageHeader =
+    "<nav id='header' class='navbar fixed-top text-light' style='background-image: linear-gradient(rgb(56, 98, 166), rgb(104, 134, 184))'><img src='https://raw.githubusercontent.com/cafeamericano/UNC-Project02/master/public/logo.png' style='height: 50px'><a href='/' id='logoutButton' style='color: white'><i class='fas fa-sign-out-alt fa-2x'></i></a></nav><br><br>";
+
+  var messageBody =
+    "This email is to confirm that " +
+    firstName +
+    " " +
+    lastName +
+    " has an appointment with " +
+    physicianName +
+    " at " +
+    time +
+    " on " +
+    date +
+    ".";
+
+  var messageReason = reason;
+
   // setup e-mail data, even with unicode symbols
   var mailOptions = {
     from: process.env.NODEMAILER_EMAIL_ADDRESS, // sender address (who sends)
     to: recipientEmail, // list of receivers (who receives)
     subject: "Appointment Confirmation for " + firstName + " " + lastName, // Subject line
-    text:
-      "This email is to confirm that " +
-      firstName +
-      " " +
-      lastName +
-      " has an appointment with " +
-      physicianName +
-      " at " +
-      time +
-      " on " +
-      date +
-      ". The reason for the appointment is " +
-      reason +
-      "." // plaintext body
-    // html:
-    //   "<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js" // html body
+    text: messageBody, // plaintext body
+    html:
+      messageHeader +
+      messageBody +
+      "<br><br><strong>REASON FOR APPOINTMENT:</strong><br>" +
+      messageReason
   };
 
   // send mail with defined transport object
