@@ -1,69 +1,85 @@
-<form method="POST" action='/api/addsnapshot'>
-    <div class='row'>
-        <div class="form-group col-md-6 col-sm-12">
-            <label for="patientId">Patient ID</label>
-            <input readonly type="text" class="form-control" name="patientId" value="{{this.patientId}}">
+<div class='row'>
+    <div class='col'>
+        <div class='card'>
+
+            {{!-- Header --}}
+            <form method="POST" action='/api/addsnapshot'>
+                <div class='card-header'>
+                    <strong>
+                        Add a Snapshot
+                    </strong>
+                </div>
+                {{!-- Body --}}
+                <div class='card-body'>
+                    <div class='row'>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="patientId">Patient ID</label>
+                            <input readonly type="text" class="form-control" name="patientId"
+                                value="{{this.patientId}}">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="snapshotDate">Date</label>
+                            <input type="date" class="form-control" name="snapshotDate">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="physicianName">Performing Physician</label>
+                            <select class="form-control" name="physicianName">
+                                <option value="" disabled selected>Select physician</option>
+                                <option value="Rossi, Giulia">Rossi, Giulia</option>
+                                <option value="Schneider, Hans">Schneider, Hans</option>
+                                <option value="Singh, Rajesh">Singh, Rajesh</option>
+                                <option value="Wei, Zhang">Wei, Zhang</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="pulse">Pulse</label>
+                            <input type="number" class="form-control" name="pulse">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="temperature">Temperature</label>
+                            <input type="number" step="0.1" class="form-control" name="temperature">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="weightValue">Weight (Pounds)</label>
+                            <input type="number" step="0.1" class="form-control" name="weightValue">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="heightValue">Height (Inches)</label>
+                            <input type="number" class="form-control" name="heightValue">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="isDiabetic">Diabetic?</label>
+                            <select name="isDiabetic" class="form-control">
+                                <option value="" disabled selected>Select status</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="systolicBloodPressure">Systolic Blood Pressure</label>
+                            <input type="number" class="form-control" name="systolicBloodPressure">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="diastolicBloodPressure">Diastolic Blood Pressure</label>
+                            <input type="number" class="form-control" name="diastolicBloodPressure">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="comments">Comments</label>
+                            <textarea type="text" class="form-control" name="comments"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- Footer --}}
+                <div class='card-footer text-right'>
+                    <div id='cancelButton' class="btn btn-secondary">Cancel and Return</div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
         </div>
-        <div class="form-group col-md-6 col-sm-12">
-            <label for="snapshotDate">Date</label>
-            <input type="date" class="form-control" name="snapshotDate">
-        </div>
-        <div class="form-group col-md-6 col-sm-12">
-            <label for="physicianName">Performing Physician</label>
-            <select class="form-control" name="physicianName">
-                <option value="" disabled selected>Select physician</option>
-                <option value="Rossi, Giulia">Rossi, Giulia</option>
-                <option value="Schneider, Hans">Schneider, Hans</option>
-                <option value="Singh, Rajesh">Singh, Rajesh</option>
-                <option value="Wei, Zhang">Wei, Zhang</option>
-            </select>
-        </div>
-        <div class="form-group col-md-6 col-sm-12">
-            <label for="pulse">Pulse</label>
-            <input type="number" class="form-control" name="pulse">
-        </div>
-        <div class="form-group col-md-6 col-sm-12">
-            <label for="temperature">Temperature</label>
-            <input type="number" step="0.1" class="form-control" name="temperature">
-        </div>
-        <div class="form-group col-md-6 col-sm-12">
-            <label for="weightValue">Weight (Pounds)</label>
-            <input type="number" step="0.1" class="form-control" name="weightValue">
-        </div>
-        <div class="form-group col-md-6 col-sm-12">
-            <label for="heightValue">Height (Inches)</label>
-            <input type="number" class="form-control" name="heightValue">
-        </div>
-        <div class="form-group col-md-6 col-sm-12">
-            <label for="isDiabetic">Diabetic?</label>
-            <select name="isDiabetic" class="form-control">
-                <option value="" disabled selected>Select status</option>
-                <option value="Yes">Yes</option>
-                <option value="No">Yes</option>
-            </select>
-        </div>
-        <div class="form-group col-md-6 col-sm-12">
-            <label for="systolicBloodPressure">Systolic Blood Pressure</label>
-            <input type="number" class="form-control" name="systolicBloodPressure">
-        </div>
-        <div class="form-group col-md-6 col-sm-12">
-            <label for="diastolicBloodPressure">Diastolic Blood Pressure</label>
-            <input type="number" class="form-control" name="diastolicBloodPressure">
-        </div>
-        <div class="form-group col-md-6 col-sm-12">
-            <label for="comments">Comments</label>
-            <textarea type="text" class="form-control" name="comments"></textarea>
-        </div>
+        </form>
+
     </div>
-    <div class='row alert alert-dark'>
-        <div class='col'>
-            <div id='cancelButton' class="btn btn-secondary" style="width: 100%">Cancel and Return</div>
-        </div>
-        <div class='col'>
-            <button type="submit" class="btn btn-primary" style="width: 100%">Save Changes</button>
-        </div>
-    </div>
-</form>
+</div>
 
 {{!-- Scripts --}}
 <script src="/js/addSnapshot.js"></script>

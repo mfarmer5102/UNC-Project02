@@ -1,5 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   var Appointments = sequelize.define("Appointments", {
+    patientId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     firstName: {
       type: DataTypes.STRING,
       allowNull: false
@@ -28,6 +32,10 @@ module.exports = function(sequelize, DataTypes) {
     comments: {
       type: DataTypes.STRING,
       isAlphsnumeric: true
+    },
+    notificationEmail: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
   });
   return Appointments;

@@ -59,17 +59,22 @@ renderProfileNavbar(
 
 //Define button functions ////////////////////////////////////////////////
 
-$(document).on("click", "#patientInformationLink", function() {
+$(document).on("click touchstart", "#patientInformationLink", function() {
   var patientId = $(this).attr("data-patientId");
   window.location.replace("/page_patientinformation/" + patientId);
 });
 
-$(document).on("click", "#patientSnapshotLink", function() {
+$(document).on("click touchstart", "#patientSnapshotLink", function() {
   var patientId = $(this).attr("data-patientId");
   window.location.replace("/page_patientsnapshots/" + patientId);
 });
 
-$(document).on("click", "#patientVitalsLink", function() {
+$(document).on("click touchstart", "#patientAppointmentsLink", function() {
+  var patientId = $(this).attr("data-patientId");
+  window.location.replace("/page_patientappointments/" + patientId);
+});
+
+$(document).on("click touchstart", "#patientVitalsLink", function() {
   //var patientId = $(this).attr("data-patientId");
   window.location.replace("/vitals");
 });

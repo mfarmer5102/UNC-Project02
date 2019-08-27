@@ -66,6 +66,23 @@ module.exports = function(app) {
     });
   });
 
+  //Send the Edit Patient page
+  app.get("/page_addappointment/:patientid", function(req, res) {
+    db.Patients.findOne({
+      where: {
+        id: req.params.patientid
+      }
+    }).then(function(result) {
+      if (result !== null) {
+        var resArr = [];
+        resArr.push(result.dataValues);
+        res.render("addAppointment", { patient: resArr });
+      } else {
+        res.sendStatus(418);
+      }
+    });
+  });
+
   //Send the Add Snapshot page
   app.get("/page_addsnapshot/:patientid", function(req, res) {
     var patientIdCapture = req.params.patientid;
@@ -90,5 +107,22 @@ module.exports = function(app) {
   //Send the Vitals page
   app.get("/vitals", function(req, res) {
     res.render("vitals");
+  });
+
+  //Send the Wristband Print page
+  app.get("/page_wristbandprint/:patientid", function(req, res) {
+    db.Patients.findOne({
+      where: {
+        id: req.params.patientid
+      }
+    }).then(function(result) {
+      if (result !== null) {
+        var resArr = [];
+        resArr.push(result.dataValues);
+        res.render("wristbandprint", { patient: resArr });
+      } else {
+        res.sendStatus(418);
+      }
+    });
   });
 };

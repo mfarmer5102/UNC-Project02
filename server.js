@@ -30,6 +30,12 @@ require("./routes/addPatient")(app);
 require("./routes/addSnapshot")(app);
 require("./routes/editPatient")(app);
 require("./routes/editSnapshot")(app);
+require("./routes/appointments")(app);
+
+//404 Route
+app.get("*", function(req, res) {
+  res.render("404");
+});
 
 var syncOptions = { force: false, alter: true };
 
@@ -39,7 +45,7 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
-// Starting the server, syncing our models ------------------------------------/
+// Starting the server, syncing our models -------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
   app.listen(PORT, function() {
     console.log(

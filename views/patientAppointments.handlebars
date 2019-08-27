@@ -1,0 +1,45 @@
+{{!-- Patient Profile Navbar --}}
+<div id='profileNavbarHolder'></div>
+
+<div class='row animated fadeInUpBig'>
+    <div class='col'>
+        {{#if appointment}}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Physician</th>
+                    <th scope="col">Reason</th>
+                    <th scope="col">Email Notice</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each appointment}}
+                <tr>
+                    <td>{{this.appointmentDate}}</td>
+                    <td>{{this.appointmentTime}}</td>
+                    <td>{{this.physicianName}}</td>
+                    <td>{{this.comments}}</td>
+                    <td>{{this.notificationEmail}}</td>
+                    <td class='text-right'><button class='btn btn-danger delete-button' style='padding: 1px 10px'
+                            data-appointmentId='{{this.id}}' data-patientId='{{this.patientId}}'><small>Delete</small>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{else}}
+        <div class='col'>
+            <div class="alert alert-secondary" role="alert">
+                No appointments are currently scheduled for this patient.
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</div>
+
+<script src="/js/patientAppointments.js"></script>
+<script src="/js/renderProfileNavbar.js"></script>
+<script src="/js/renderPatientNameBar.js"></script>

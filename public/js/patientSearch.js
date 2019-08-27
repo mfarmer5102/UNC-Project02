@@ -79,8 +79,8 @@ $(document).on("submit", "#patientSearchForm", function() {
   });
 });
 
-//Handle click on card
-$(document).on("click", ".patient-card", function() {
+//Handle click touchstart on card
+$(document).on("click touchstart", ".patient-card", function() {
   //Prepare data for storage
   var patientId = $(this).attr("data-patientId");
   var patientFirstName = $(this).attr("data-firstName");
