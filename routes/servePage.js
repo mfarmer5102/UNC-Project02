@@ -109,7 +109,7 @@ module.exports = function(app) {
     res.render("vitals");
   });
 
-  //Send the Wristband Print page
+  //Send the Wristband Print page to user
   app.get("/page_wristbandprint/:patientid", function(req, res) {
     db.Patients.findOne({
       where: {
