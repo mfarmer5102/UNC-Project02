@@ -1,4 +1,12 @@
 function drawCards(response) {
+  //Prevent rendering of no responses OR undefined by detecting HTML responses
+  if (response[0] === null || response[0][0] === "<") {
+    $("#cardContainer").append(
+      "<div class='alert alert-secondary animated fadeInUpBig'>No results</div>"
+    );
+    return;
+  }
+
   //Define define and fill card header
   var header = $("<div class='card-header' style='font-weight: bold'></div>");
   header.append(response[i].lastName + ", " + response[i].firstName);
