@@ -21,7 +21,7 @@ module.exports = function(app) {
     db.Appointments.findAll({
       order: [["appointmentDate", "ASC"], ["appointmentTime", "ASC"]],
       where: {
-        appointmentDate: moment()
+        appointmentDate: moment().tz("New York")
       }
     }).then(function(result) {
       console.log(result);
@@ -92,7 +92,7 @@ module.exports = function(app) {
   });
 };
 
-// Define function for sending email to a patient //////////////////////////////////////////////////
+// Define function for sending email to a patient /////////////////////////////////////////////////
 
 function sendEmailToPatient(
   recipientEmail,
