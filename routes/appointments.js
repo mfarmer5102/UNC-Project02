@@ -21,7 +21,9 @@ module.exports = function(app) {
     db.Appointments.findAll({
       order: [["appointmentDate", "ASC"], ["appointmentTime", "ASC"]],
       where: {
-        appointmentDate: moment()
+        appointmentDate: moment(response[i].date)
+          .add(12, "hours")
+          .format("MM/DD/YYYY")
       }
     }).then(function(result) {
       console.log(result);
