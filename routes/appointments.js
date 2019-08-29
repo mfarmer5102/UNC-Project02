@@ -92,7 +92,7 @@ module.exports = function(app) {
   });
 };
 
-// Define function for sending email to a patient //////////////////////////////////////////////////
+// Define function for sending email to a patient /////////////////////////////////////////////////
 
 function sendEmailToPatient(
   recipientEmail,
