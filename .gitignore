@@ -65,3 +65,6 @@ config/config.json
 
 #DS Store
 .DS_Store
+
+#Pages Documents
+*.pages
