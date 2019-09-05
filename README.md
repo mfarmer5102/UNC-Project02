@@ -28,21 +28,31 @@ After logging in, users may enter the SSN for a particular patient. If a valid S
 
 ### Patient Information
 
+The patient information page is the landing page for each patient's profile. Users may reference personal information as well as contact information. From this page, a new snapshot may be added, an appointment scheduled, patient information edited, or the print wrsitband feature accessed.
+
 ![img](demoMedia/patientInformation.png)
 
 ### Print Wristband
+
+The print wristband page contains a QR code unique to each patient as well as the patient's name and date of birth. Upon printing this page, a wristband may be cut out and applied to a patient's wrist. Scanning the QR code with a camera-equipped mobile device will automatically direct the user to the patient's information page (assuming that the user is logged in on the device performing the QR scan).
 
 ![img](demoMedia/printWristband.png)
 
 ### Patient Appointments
 
+The appointments page shows a list of all upcoming appointments for the patient. Users may reference the date, time, physician, reason, and email to which notification was provided (if applicable). Appointments may also be deleted from this page.
+
 ![img](demoMedia/patientAppointments.png)
 
 ### Patient Vitals
 
+The vitals page contains graphs displaying trends for pulse, systolic blood pressure, weight, and temperature. By visualizing changes in vitals over time, users may identify potential health issues for a patient.
+
 ![img](demoMedia/patientVitals.png)
 
 ### All Appointments
+
+Users may view a calendar as well as a table reflecting all appointments for all patients for the current date. The calendar is categorized by performing physician and can be used to minimie the risk of overbooking.
 
 ![img](demoMedia/allAppointments.png)
 
