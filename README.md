@@ -42,6 +42,8 @@ The print wristband page contains a QR code unique to each patient as well as th
 
 The appointments page shows a list of all upcoming appointments for the patient. Users may reference the date, time, physician, reason, and email to which notification was provided (if applicable). Appointments may also be deleted from this page.
 
+NOTE: When an appointment is created from the patient information page and a notification email address provided, users will get an automated email confirming the date, time, physician, and reason for the appointment via the Nodemailer NPM package.
+
 ![img](demoMedia/patientAppointments.png)
 
 ### Patient Vitals
